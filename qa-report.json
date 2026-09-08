@@ -1,18 +1,18 @@
 {
-  "tier": "premium",
+  "tier": "standard",
   "tier_config": {
     "min_css_per_page": 0,
-    "min_techniques": 6,
-    "requires_blog": true
+    "min_techniques": 4,
+    "requires_blog": false
   },
   "site": "a-s-contracting-services-v7",
   "expected_slug": null,
   "passed": true,
   "grade": "B",
-  "score_pct": 87,
+  "score_pct": 86,
   "summary": {
-    "total": 312,
-    "passed": 224,
+    "total": 307,
+    "passed": 219,
     "failed": 80,
     "warn": 8,
     "blockers_failed": 0,
@@ -47,7 +47,7 @@
     {
       "name": "color_mix",
       "description": "color-mix() function (modern CSS)",
-      "matches": 85
+      "matches": 86
     },
     {
       "name": "scroll_snap",
@@ -294,22 +294,22 @@
     {
       "status": "pass",
       "check": "External stylesheet",
-      "detail": "Linked to 1 external CSS file(s), 598 lines total",
+      "detail": "Linked to 1 external CSS file(s), 610 lines total",
       "file": "privacy-policy/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "598",
+      "actual": "610",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "External stylesheet",
-      "detail": "Linked to 1 external CSS file(s), 598 lines total",
+      "detail": "Linked to 1 external CSS file(s), 610 lines total",
       "file": "terms/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "598",
+      "actual": "610",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
@@ -349,22 +349,22 @@
     {
       "status": "pass",
       "check": "External stylesheet",
-      "detail": "Linked to 1 external CSS file(s), 598 lines total",
+      "detail": "Linked to 1 external CSS file(s), 610 lines total",
       "file": "cookie-policy/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "598",
+      "actual": "610",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
       "check": "External stylesheet",
-      "detail": "Linked to 1 external CSS file(s), 598 lines total",
+      "detail": "Linked to 1 external CSS file(s), 610 lines total",
       "file": "accessibility/index.php",
       "severity": "blocker",
       "expected": null,
-      "actual": "598",
+      "actual": "610",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
@@ -601,55 +601,55 @@
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
-      "detail": "694 lines (96 inline + 598 external, need \u22650)",
+      "check": "Standard tier CSS bar",
+      "detail": "706 lines (96 inline + 610 external, need \u22650)",
       "file": "index.php",
       "severity": "blocker",
       "expected": "0",
-      "actual": "694",
+      "actual": "706",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
-      "detail": "627 lines (29 inline + 598 external, need \u22650)",
+      "check": "Standard tier CSS bar",
+      "detail": "639 lines (29 inline + 610 external, need \u22650)",
       "file": "about/index.php",
       "severity": "blocker",
       "expected": "0",
-      "actual": "627",
+      "actual": "639",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
-      "detail": "607 lines (9 inline + 598 external, need \u22650)",
+      "check": "Standard tier CSS bar",
+      "detail": "619 lines (9 inline + 610 external, need \u22650)",
       "file": "services/index.php",
       "severity": "blocker",
       "expected": "0",
-      "actual": "607",
+      "actual": "619",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
-      "check": "Premium tier CSS bar",
-      "detail": "634 lines (36 inline + 598 external, need \u22650)",
+      "check": "Standard tier CSS bar",
+      "detail": "646 lines (36 inline + 610 external, need \u22650)",
       "file": "contact/index.php",
       "severity": "blocker",
       "expected": "0",
-      "actual": "634",
+      "actual": "646",
       "fix_hint": "",
       "section": "PHP STANDARDS"
     },
     {
       "status": "pass",
-      "check": "Premium tier techniques",
-      "detail": "10 distinct techniques detected (need \u22656)",
+      "check": "Standard tier techniques",
+      "detail": "10 distinct techniques detected (need \u22654)",
       "file": "",
       "severity": "blocker",
-      "expected": "6",
+      "expected": "4",
       "actual": "10",
       "fix_hint": "",
       "section": "PHP STANDARDS"
@@ -2702,28 +2702,6 @@
     },
     {
       "status": "pass",
-      "check": "Legal page: /cookie-policy/",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
-      "check": "Legal page: /accessibility/",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
       "check": "Footer legal links",
       "detail": "",
       "file": "",
@@ -2996,39 +2974,6 @@
       "actual": null,
       "fix_hint": "",
       "section": "COMPLIANCE & TRUST"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: blog posts",
-      "detail": "2 post(s)",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: blog index registry-driven",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
-    },
-    {
-      "status": "pass",
-      "check": "Premium: FAQ linked from chrome",
-      "detail": "",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PREMIUM TIER EXTRAS"
     },
     {
       "status": "pass",
@@ -3385,7 +3330,7 @@
     {
       "status": "pass",
       "check": "No image file > 250KB",
-      "detail": "8 referenced image path(s) checked",
+      "detail": "11 referenced image path(s) checked",
       "file": "",
       "severity": "blocker",
       "expected": null,
@@ -3451,7 +3396,7 @@
     {
       "status": "pass",
       "check": "Homepage image payload \u2264600KB (static estimate)",
-      "detail": "~4KB eager at 960w candidates (+0KB lazy, loaded on scroll)",
+      "detail": "~173KB eager at 960w candidates (+0KB lazy, loaded on scroll)",
       "file": "",
       "severity": "warning",
       "expected": null,
@@ -3462,7 +3407,7 @@
     {
       "status": "pass",
       "check": "Total page weight \u22641.5MB (static estimate)",
-      "detail": "~175KB uncompressed HTML+CSS+JS+fonts+images",
+      "detail": "~347KB uncompressed HTML+CSS+JS+fonts+images",
       "file": "",
       "severity": "warning",
       "expected": null,

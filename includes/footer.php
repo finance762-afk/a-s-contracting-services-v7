@@ -23,11 +23,12 @@ if (!isset($siteName)) {
         <!-- Column 1: About / Trust Badges -->
         <div class="footer-col">
           <div class="footer-logo">
-            <div class="logo-mark">A&amp;S</div>
-            <div class="logo-text">
-              <span class="logo-primary">Contracting</span>
-              <span class="logo-secondary">Services</span>
-            </div>
+            <a href="/" aria-label="<?php echo $siteName; ?> Home">
+              <picture>
+                <source srcset="/assets/images/logo.webp?v=2" type="image/webp">
+                <img src="/assets/images/logo.png?v=2" alt="<?php echo htmlspecialchars($siteName); ?> logo" width="800" height="407" loading="lazy" decoding="async">
+              </picture>
+            </a>
           </div>
           <p class="footer-tagline"><?php echo htmlspecialchars($tagline); ?></p>
           <p class="footer-description"><?php echo htmlspecialchars(substr($aboutDescription, 0, 180)); ?>…</p>

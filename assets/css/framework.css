@@ -196,13 +196,22 @@ section, .section { position: relative; padding-block: var(--section-pad); overf
 .site-header.scrolled { background: color-mix(in srgb, var(--color-paper) 96%, transparent); border-bottom-color: var(--color-line); box-shadow: var(--shadow-sm); }
 .site-header--dark { background: color-mix(in srgb, var(--color-dark) 84%, transparent); border-bottom-color: rgba(255,255,255,.06); }
 .site-header--dark.scrolled { background: color-mix(in srgb, var(--color-dark) 95%, transparent); }
-.site-header--dark .nav-links > li > a, .site-header--dark .nav-main > li > a, .site-header--dark .link-call, .site-header--dark .brand { color: rgba(255,255,255,.85); }
+.site-header--dark .nav-links > li > a, .site-header--dark .nav-main > li > a, .site-header--dark .navbar-links > li > a, .site-header--dark .navbar-links > li > .dropdown-toggle, .site-header--dark .nav-links > li > .dropdown-toggle, .site-header--dark .link-call, .site-header--dark .navbar-phone, .site-header--dark .brand, .site-header--dark .site-logo { color: rgba(255,255,255,.88); }
+.site-header--dark .navbar-links > li > a:hover, .site-header--dark .navbar-links > li > .dropdown-toggle:hover, .site-header--dark .navbar-phone:hover, .site-header--dark .link-call:hover { color: #fff; }
+.site-header--dark .navbar-phone svg, .site-header--dark .link-call svg { color: var(--color-accent-bright); }
+.site-header--dark .navbar-links > li > a::after { background: var(--color-accent-bright); }
+.site-header--dark .navbar-cta .btn-primary, .site-header--dark .header-cta .btn-primary { background: #fff; color: var(--color-dark); border-color: #fff; }
+.site-header--dark .navbar-cta .btn-primary:hover, .site-header--dark .header-cta .btn-primary:hover { background: var(--color-accent-bright); border-color: var(--color-accent-bright); color: var(--color-dark); }
+.site-header--dark .hamburger .hamburger-line { background: #fff; }
 .site-header--dark .hamburger span { background: #fff; }
 .header-inner, .navbar-inner { height: 100%; display: flex; align-items: center; gap: 1rem; white-space: nowrap; }
 .site-logo, .navbar-logo, .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--color-ink); margin-right: auto; }
 .site-logo img, .navbar-logo img { height: 96px; width: auto; max-width: 260px; object-fit: contain; transition: height .25s var(--ease); }
 .site-header.scrolled .site-logo img, .site-header.scrolled .navbar-logo img { height: 80px; }
 .site-logo img.logo--wordmark { height: 120px; } .site-logo img.logo--square { height: 88px; }
+/* A&S site rule: 2:1 stacked logo (mark over wordmark) — 96px would overflow the 84px bar */
+.site-logo img { height: 76px; } .site-header.scrolled .site-logo img { height: 64px; }
+@media (max-width: 1000px) { .site-logo img, .site-header.scrolled .site-logo img { height: 60px; } }
 .brand-name, .logo-name { font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; line-height: 1; }
 .brand-sub, .logo-tagline { display: block; white-space: nowrap; font-family: var(--font-accent); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-muted); margin-top: .28rem; }
 .nav-links, .nav-main, .navbar-links { display: flex; align-items: center; gap: .1rem; list-style: none; margin: 0; padding: 0; }
@@ -245,7 +254,10 @@ body.menu-open .site-header { z-index: 960; } /* keep the bar (and the hamburger
 .hero--photo { color: #fff; background: var(--color-dark); }
 .hero--photo .hero-bg { position: absolute; inset: 0; z-index: -2; }
 .hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-.hero--photo .hero-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.25) 100%); }
+.hero--photo .hero-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.74) 38%, rgba(0,0,0,.5) 68%, rgba(0,0,0,.3) 100%); } /* text column must sit on ≥.74 black — light roofs/skies swallowed the H1 at .45 (A&S 2026-09-08) */
+.hero--photo .hero-overlay::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,.4) 100%); }
+.hero--photo .hero-title, .hero--photo h1, .hero--photo .hero-answer, .hero--photo .hero-subtitle, .hero--photo .hero-eyebrow { text-shadow: 0 1px 2px rgba(0,0,0,.6), 0 8px 28px rgba(0,0,0,.45); }
+.hero--photo .text-accent { color: var(--color-accent-bright); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--color-accent) 70%, transparent); text-decoration-thickness: .06em; text-underline-offset: .14em; }
 .hero--photo .grain { z-index: -1; opacity: .35; }
 .hero--photo h1, .hero--photo .hero-title { color: #fff; }
 .hero--photo .hero-answer, .hero--photo .hero-subtitle { color: rgba(255,255,255,.85); }
@@ -498,7 +510,7 @@ dialog.estimate-dialog::backdrop { background: rgba(0,0,0,.55); backdrop-filter:
 /* === Footer (designed, not four link columns) === */
 .site-footer, .footer-v7 { background: var(--color-dark); color: rgba(255,255,255,.82); padding: var(--section-pad) 0 0; position: relative; isolation: isolate; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.1fr; gap: 2.5rem; }
-.footer-brand img, .footer-logo img { width: 150px; margin-bottom: 1rem; }
+.footer-brand img, .footer-logo img { width: auto; max-width: 220px; height: auto; margin-bottom: 1rem; }
 .footer-brand p, .footer-col p { font-size: .92rem; margin: 0 0 .8rem; }
 .site-footer h4, .footer-v7 h4, .footer-col h4 { font-family: var(--font-accent); font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent-bright); margin: 0 0 .9rem; }
 .site-footer ul, .footer-v7 ul, .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }

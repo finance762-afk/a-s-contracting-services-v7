@@ -25,7 +25,7 @@ $fullTitle = $pageTitle . ' | ' . $siteName . ' | ' . $addressCity . ', ' . $add
 
 // Default OG image if not set
 if (!isset($ogImage)) {
-    $ogImage = $siteUrl . '/assets/images/favicon-32x32.png';
+    $ogImage = $siteUrl . '/assets/images/logo-og.jpg';
 }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -99,8 +99,8 @@ if (isset($heroPreload) && !empty($heroPreload['srcset'])) {
   "@id": "<?php echo $siteUrl; ?>/#organization",
   "name": "<?php echo $siteName; ?>",
   "url": "<?php echo $siteUrl; ?>",
-  "logo": "<?php echo $siteUrl; ?>/assets/images/favicon-32x32.png",
-  "image": "<?php echo $siteUrl; ?>/assets/images/favicon-32x32.png",
+  "logo": "<?php echo $siteUrl; ?>/assets/images/logo.png",
+  "image": "<?php echo $siteUrl; ?>/assets/images/logo-og.jpg",
   "description": "<?php echo htmlspecialchars($aboutDescription); ?>",
   "telephone": "<?php echo $phoneTel; ?>",
   "email": "<?php echo $email; ?>",

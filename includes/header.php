@@ -17,17 +17,16 @@ if (!isset($siteName)) {
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Header -->
-<header class="site-header" data-header>
+<header class="site-header site-header--dark" data-header>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-inner container">
 
-      <!-- Logo (text-based — no logo image provided in intake) -->
+      <!-- Logo (client logo, cut to transparency from intake JPG — silver on dark, hence .site-header--dark) -->
       <a href="/" class="site-logo" aria-label="<?php echo $siteName; ?> Home">
-        <div class="logo-mark">A&amp;S</div>
-        <div class="logo-text">
-          <span class="logo-primary">Contracting</span>
-          <span class="logo-secondary">Services</span>
-        </div>
+        <picture>
+          <source srcset="/assets/images/logo.webp?v=2" type="image/webp">
+          <img src="/assets/images/logo.png?v=2" alt="<?php echo htmlspecialchars($siteName); ?> logo" width="800" height="407" fetchpriority="high" decoding="async">
+        </picture>
       </a>
 
       <!-- Desktop Navigation Links -->
