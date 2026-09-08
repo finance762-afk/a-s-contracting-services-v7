@@ -165,9 +165,9 @@ Complete page templates, consent HTML/CSS, footer legal row, sitemap entries, Ph
 
 ## Contact Form Submission (REQUIRED — Formsubmit.co, 2026-07-11 standard)
 
-New builds submit contact forms via **Formsubmit.co** to the client's email. Use the exact `form_action` URL from `build-plan.json` verbatim (`https://formsubmit.co/{client email}`). Customer Service is CC'd on every submission via `_cc`.
+Every build submits contact forms to the Page One leads endpoint (`https://db.pageone.cloud/functions/v1/leads/{slug}`). Use the exact `form_action` URL from `build-plan.json` verbatim. **Formsubmit.co is retired (Sep 2026)** — never emit a formsubmit.co action or its `_captcha/_template/_subject/_cc` directives; keep `_next`, `_honey`, attribution fields and the consent block.
 
-> **Legacy note:** sites migrated in June 2026 post to a Page One lead endpoint (`db.pageone.cloud/functions/v1/leads/{slug}` or `design.pageone.cloud/api/leads/{slug}`). Those are still valid — do NOT rewrite an existing site's form action in either direction unless explicitly instructed.
+> **Legacy note:** sites still on formsubmit.co or the dead `design.pageone.cloud/api/leads/{slug}` endpoint get repointed to `db.pageone.cloud/functions/v1/leads/{slug}` when touched (then run `patch-leads-spamshield.py`).
 
 **READ `references/contact-form-standard.md` BEFORE writing any form — it contains the full REQUIRED markup to copy verbatim.** Hard rules QA enforces:
 

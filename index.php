@@ -10,8 +10,20 @@ $pageTitle       = 'General Contractor in Warrenton, MO';
 $pageDescription = 'A&S Contracting Services is a licensed, insured general contractor in Warrenton, MO. Self-performed roofing, siding, gutters, drywall & remodels within 50 miles. Free estimates.';
 $canonicalUrl    = $siteUrl . '/';
 
+// Allocated hero photo (image manifest — home hero). Only -480/-960 variants exist.
+$heroImage    = '1779985052606-0c7fr0-64-Jun_03__2025_18-42-44-7JBx';
+$heroImageAlt = 'A&S Contracting Services crew and a red brick and metal-siding home with a peaked gable roof in Warrenton, MO';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+
+// About-split photo (image manifest — home sections)
+$aboutImage    = '1779985249292-cx1av8-15-Nov_19__2025_22-19-05-8UPP';
+$aboutImageAlt = 'Modern residential build with geometric metal siding and an angled roofline by A&S Contracting Services near Warrenton, MO';
+
 // Homepage services grid: show the first 8, link to the full list.
-$homeServices    = array_slice($services, 0, 8);
+$homeServices  = array_slice($services, 0, 8);
 
 // Icon per service (each differs from its neighbours; names from references/lucide-icons/)
 $serviceIcons = [
@@ -25,6 +37,28 @@ $serviceIcons = [
     'exterior-work'            => 'hammer',
     'dry-wall'                 => 'pencil-ruler',
     'general-contracting'      => 'hard-hat',
+];
+
+// Card photo per service (image manifest — each service's own hero photo)
+$serviceCardPhoto = [
+    'roofing'                  => '1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB',
+    'siding'                   => '1779985053030-6d3zxh-65-Jun_03__2025_18-42-52-Tdqj',
+    'gutters'                  => '1779985084434-7wvwuf-46-Feb_10__2026_22-02-29-uWM1',
+    'soffit'                   => '1779985210676-rimzkx-29-Dec_24__2025_18-22-23-xd3W',
+    'fascia'                   => '1779985248885-m9g42k-12-Nov_19__2025_22-17-31-YgPM',
+    'windows-doors'            => '1779985247084-5a8nou-2-Aug_26__2025_18-27-26-neFH',
+    'full-scale-interior-work' => '1779985458116-w0hrmz-55-Oct_14__2024_15-18-30-xZXr',
+    'exterior-work'            => '1779985052217-p5psyo-62-Apr_25__2025_19-50-40-dTeE',
+];
+$serviceCardAlt = [
+    'roofing'                  => 'Finished asphalt shingle roof with vent pipes on a Warrenton, MO home',
+    'siding'                   => 'Tan metal siding with brick accents and a covered entry porch',
+    'gutters'                  => 'Roof and gutter installation in progress on a wooded Warren County property',
+    'soffit'                   => 'Worker installing soffit trim on a two-story home near Warrenton',
+    'fascia'                   => 'Metal roofline and white fascia trim on a modern home exterior',
+    'windows-doors'            => 'New fiber-cement-clad home with large casement windows and dark roof',
+    'full-scale-interior-work' => 'Roof framing and interior construction on a residential renovation',
+    'exterior-work'            => 'Completed two-story exterior renovation with siding, windows and patio',
 ];
 
 // Three benefit bullets per service (3–6 words each)
@@ -49,6 +83,21 @@ $serviceCardDesc = [
     'windows-doors'            => 'Replacement windows and doors that cut drafts and tighten up your home.',
     'full-scale-interior-work' => 'Interior remodels from drywall and trim to full room additions.',
     'exterior-work'            => 'Complete exterior renovations handled by one self-performing crew.',
+];
+
+// ─── Recent-work gallery (image manifest — GALLERY photos) ───────────────────
+$galleryItems = [
+    ['1779985211133-e74mup-36-Dec_24__2025_21-56-30-RA7d', 'Roofing',        'Asphalt shingle roof going on over a wooded lot',            true],
+    ['1779985049692-2gmyz6-31-Mar_13__2025_16-36-11-MGgp', 'Siding',         'New tan vinyl siding and garage on a Warren County home',    false],
+    ['1779984949713-arsxr0-25-Aug_06__2025_14-36-12-a7GW', 'Interior Work',  'Interior framing and drywall mid-renovation',                false],
+    ['1779985084912-c2c0m8-65-Feb_20__2026_19-30-33-C4y5', 'Exterior Work',  'Finished metal building with a standing-seam roof',          true],
+    ['1779985050543-4vablu-34-Mar_13__2025_16-37-22-A7P5', 'Siding',         'Two-story home with beige vinyl siding and fresh trim',      false],
+    ['1779985048829-yoqujz-14-Mar_11__2025_23-54-47-qHie', 'Windows & Doors','New windows installed during a home renovation',             false],
+    ['1779985459096-1p3iml-57-Oct_14__2024_15-21-58-6qEf', 'General Work',   'OSB subfloor and color-coded wiring at framing stage',       true],
+    ['1779985050122-4csoe0-32-Mar_13__2025_16-36-41-NptX', 'Exterior Work',  'Tan siding and a columned covered porch, completed',         false],
+    ['1779985212271-1prbgz-42-Dec_24__2025_22-37-49-p62h', 'Masonry',        'Brick exterior with a herringbone paver driveway',           false],
+    ['1779985469813-n64lom-67-Dec_05__2024_18-16-05-56rE', 'Siding',         'White vinyl siding installed over a concrete foundation',    true],
+    ['1779985459992-36bztv-59-Oct_14__2024_23-04-45-zLmU', 'Exterior Work',  'White siding and a dark shingle roof during a remodel',      false],
 ];
 
 // ─── FAQ (homepage) ─────────────────────────────────────────────────────────
@@ -85,9 +134,9 @@ $schema = generateFAQSchema($faqs);
 
 // Review location context (derived from the review text — not fabricated)
 $reviewMeta = [
-    'Marcus H.'   => ['loc' => 'Warrenton, MO',   'svc' => 'Roof Replacement'],
-    'Jennifer K.' => ['loc' => 'Near Warrenton',  'svc' => 'Siding & Gutters'],
-    'Robert T.'   => ['loc' => 'Wright City, MO',  'svc' => 'Interior Renovation'],
+    'Marcus H.'   => ['loc' => 'Warrenton, MO',    'svc' => 'Roof Replacement'],
+    'Jennifer K.' => ['loc' => 'Near Warrenton',    'svc' => 'Siding & Gutters'],
+    'Robert T.'   => ['loc' => 'Wright City, MO',   'svc' => 'Interior Renovation'],
     'Diane L.'    => ['loc' => 'Warren County, MO', 'svc' => 'Soffit & Fascia'],
 ];
 
@@ -96,6 +145,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
 <!-- Page-specific composition (token-only; no hardcoded colors/shadows/spacing) -->
 <style>
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+
+/* Recent-work gallery head */
+.gallery-head { display: grid; gap: .6rem; max-width: 60ch; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.gallery-head p { margin: 0; color: var(--color-ink-2); }
+.gallery-after { text-align: center; margin-top: 1.75rem; }
+
 /* Signature "one roof" capabilities band — unique to the homepage */
 .roof-band .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .roof-band__lead h2 { max-width: 16ch; }
@@ -107,27 +165,35 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 @media (max-width: 900px) { .roof-band .container { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .roof-list { grid-template-columns: 1fr; } }
 
-/* About right column — branded credentials panel (no client photo available) */
-.creds-panel { position: relative; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: linear-gradient(150deg, var(--color-dark), var(--color-dark-alt)); color: #fff; padding: clamp(1.75rem, 4vw, 2.5rem); box-shadow: var(--shadow-lg); overflow: hidden; }
-.creds-panel h3 { color: #fff; font-size: 1.4rem; max-width: 18ch; }
-.creds-panel p { color: rgba(255,255,255,.82); margin-top: .75rem; }
-.creds-panel ul { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: .7rem; }
-.creds-panel li { display: flex; align-items: flex-start; gap: .6rem; color: rgba(255,255,255,.9); font-weight: 500; }
-.creds-panel li svg { color: var(--color-accent-bright); flex: 0 0 auto; margin-top: 2px; }
+/* About right column — real client photo in an offset accent frame (asymmetric) */
+.about-photo { position: relative; }
+.about-photo::before { content: ""; position: absolute; inset: -1.1rem -1.1rem 1.4rem 1.4rem; border: 2px solid var(--color-accent); border-radius: var(--radius-lg); z-index: -1; }
+.about-photo picture { display: block; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 93%); }
+.about-photo img { width: 100%; height: auto; display: block; aspect-ratio: 4 / 5; object-fit: cover; }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
-<!-- ═══════════════════════ HERO (type-led — no client photo) ═══════════════════════ -->
-<section class="hero hero--type">
+<!-- ═══════════════════════ HERO (photo-led — bold-industrial) ═══════════════════════ -->
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, [
+        'sizes'         => '100vw',
+        'width'         => 1600,
+        'height'        => 1000,
+        'loading'       => 'eager',
+        'fetchpriority' => 'high',
+    ]); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <div class="hero-grid hero-grid--form">
 
       <div class="hero-text">
         <span class="eyebrow">Warrenton, MO &middot; Serving Warren County since <?php echo $yearEstablished; ?></span>
-        <h1 class="hero-title">Warrenton&rsquo;s <span class="text-accent">general contractor</span> for roofs, siding &amp; full remodels</h1>
-        <p class="hero-answer">A&amp;S Contracting Services self-performs roofing, siding, gutters, soffit, fascia, windows, drywall, and full interior and exterior renovations for homes and businesses within 50 miles of Warrenton, MO. One licensed, insured crew handles your project from the written estimate to the final walkthrough, with no subcontractors and a free, no-obligation estimate to start.</p>
+        <h1 class="hero-title">Warrenton&rsquo;s <span class="text-accent">general contractor</span> for roofs, siding &amp; remodels</h1>
+        <p class="hero-answer">A&amp;S Contracting Services self-performs roofing, siding, gutters, windows, and full renovations for homes within 50 miles of Warrenton&mdash;one licensed, insured crew from estimate to walkthrough.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
@@ -139,36 +205,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         </ul>
       </div>
 
-      <aside class="hero-form-card" id="estimate-form">
-        <h2>Get a free estimate</h2>
-        <p class="hero-form-tagline">No obligation. Same-day reply.</p>
-        <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
-          <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <?php echo p1_attribution_fields('hero'); ?>
-          <input type="hidden" name="consent_version" value="v2.1">
-          <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
-          <div class="form-row"><label class="sr-only" for="hero-name">Name</label><input id="hero-name" type="text" name="name" placeholder="Name" autocomplete="name" required></div>
-          <div class="form-row"><label class="sr-only" for="hero-phone">Phone</label><input id="hero-phone" type="tel" name="phone" placeholder="Phone" autocomplete="tel" required></div>
-          <div class="form-row"><label class="sr-only" for="hero-service">Service</label>
-            <select id="hero-service" name="service">
-              <option value="">What do you need?</option>
-              <?php foreach ($services as $heroSvc): ?>
-              <option value="<?php echo htmlspecialchars($heroSvc['name']); ?>"><?php echo htmlspecialchars($heroSvc['name']); ?></option>
-              <?php endforeach; ?>
-            </select>
-          </div>
-          <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
-          <!-- spam shield: signed render timestamp + JS interaction signal -->
-          <?php $__ft_ts = (string) time(); ?>
-          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
-          <input type="hidden" name="_js" value="" class="js-shield-field">
-          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
-          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
-          <?php } ?>
-          <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
-        </form>
-      </aside>
+      <?php
+      $heroFormId    = 'hero';
+      $heroFormTitle = 'Get a free estimate';
+      include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php';
+      ?>
 
     </div>
   </div>
@@ -199,6 +240,60 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+<!-- ═══════════════════════ RECENT WORK GALLERY ═══════════════════════ -->
+<section class="section gallery-section" aria-label="Recent projects">
+  <span class="floating-ring" style="top:-5rem; left:-4rem;" aria-hidden="true"></span>
+  <span class="floating-ring" style="bottom:-6rem; right:-5rem;" aria-hidden="true"></span>
+  <div class="container-wide">
+    <div class="gallery-head reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>Roofs, siding &amp; renovations <span class="text-accent">across Warren County</span></h2>
+      <p>A look at recent A&amp;S Contracting Services projects around Warrenton, Wright City, and central Missouri&mdash;scroll to see more.</p>
+    </div>
+
+    <div class="gallery-track" data-p1-dynamic tabindex="0" aria-label="Project photos — scroll horizontally">
+      <?php foreach ($galleryItems as $g):
+        [$gBase, $gTag, $gCap, $gWide] = $g;
+      ?>
+      <figure class="gallery-item<?php echo $gWide ? ' gallery-item--wide' : ''; ?>">
+        <?php echo p1_picture($gBase, $gCap, [
+            'sizes'  => $gWide ? '(max-width: 768px) 80vw, 480px' : '(max-width: 768px) 70vw, 320px',
+            'width'  => $gWide ? 480 : 320,
+            'height' => $gWide ? 360 : 400,
+        ]); ?>
+        <figcaption>
+          <span class="gallery-item__tag"><?php echo htmlspecialchars($gTag); ?></span>
+          <span class="gallery-item__cap"><?php echo htmlspecialchars($gCap); ?></span>
+        </figcaption>
+      </figure>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="gallery-after">
+      <a href="/services/" class="btn btn-secondary btn-lg">See all services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SIGNATURE: EVERYTHING UNDER ONE ROOF ═══════════════════════ -->
+<section class="section on-dark roof-band edge-parallelogram-top" aria-label="Trades handled in-house">
+  <span class="grain-layer" aria-hidden="true"></span>
+  <span class="floating-ring" style="top:-6rem; right:-4rem;" aria-hidden="true"></span>
+  <div class="container">
+    <div class="roof-band__lead reveal-left">
+      <span class="eyebrow">One licensed roof</span>
+      <h2>Every trade handled by the same crew</h2>
+      <p>Most contractors sub out half the job. A&amp;S Contracting Services keeps all ten trades in-house, so the people who quote your project are the people who finish it.</p>
+      <span class="roof-band__note"><?php echo icon('handshake', 18); ?> One team &middot; one point of contact</span>
+    </div>
+    <ul class="roof-list reveal-right">
+      <?php foreach ($services as $svc): ?>
+      <li><?php echo icon('check', 18); ?> <?php echo htmlspecialchars($svc['name']); ?></li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+</section>
+
 <!-- ═══════════════════════ SERVICES ═══════════════════════ -->
 <section class="section" aria-label="General contracting services">
   <div class="container-wide">
@@ -216,8 +311,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         $tint   = $tintCycle[$i % 3];
         $delay  = ($i % 3) + 1;
         $iconNm = $serviceIcons[$slug] ?? 'check-circle';
+        $photo  = $serviceCardPhoto[$slug] ?? null;
       ?>
       <article class="service-card-with-image card-tint-<?php echo $tint; ?> reveal-up reveal-delay-<?php echo $delay; ?>">
+        <?php if ($photo): ?>
+        <div class="service-card__image">
+          <?php echo p1_picture($photo, $serviceCardAlt[$slug] ?? ($svc['name'] . ' by A&S Contracting Services in Warrenton, MO'), [
+              'sizes'  => '(max-width: 600px) 100vw, (max-width: 1199px) 50vw, 25vw',
+              'width'  => 600,
+              'height' => 360,
+          ]); ?>
+        </div>
+        <?php endif; ?>
         <div class="service-card__body">
           <div class="service-card__icon"><?php echo icon($iconNm, 22); ?></div>
           <h3><?php echo htmlspecialchars($svc['name']); ?></h3>
@@ -239,39 +344,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
-<!-- ═══════════════════════ TICKER STRIP ═══════════════════════ -->
-<div class="ticker-strip" aria-hidden="true">
-  <div class="ticker-track">
-    <?php
-    $tickerItems = [
-      ['home', 'Roofing'], ['layers', 'Siding'], ['droplets', 'Seamless Gutters'],
-      ['wind', 'Soffit &amp; Fascia'], ['building', 'Windows &amp; Doors'], ['paint-bucket', 'Drywall &amp; Interiors'],
-      ['hammer', 'Exterior Work'], ['shield-check', 'Licensed &amp; Insured'], ['users', 'No Subcontractors'], ['badge-check', 'Free Estimates'],
-    ];
-    // Duplicate the set for a seamless loop
-    for ($rep = 0; $rep < 2; $rep++):
-      foreach ($tickerItems as $ti): ?>
-      <span><?php echo icon($ti[0], 18); ?> <?php echo $ti[1]; ?></span>
-    <?php endforeach; endfor; ?>
-  </div>
-</div>
-
-<!-- ═══════════════════════ SIGNATURE: EVERYTHING UNDER ONE ROOF ═══════════════════════ -->
-<section class="section on-dark roof-band edge-parallelogram-top" aria-label="Trades handled in-house">
+<!-- ═══════════════════════ MID-PAGE CTA BANNER ═══════════════════════ -->
+<section class="cta-banner texture-grain edge-curve-top" aria-label="Request a free estimate">
   <span class="grain-layer" aria-hidden="true"></span>
-  <span class="floating-ring" style="top:-6rem; right:-4rem;" aria-hidden="true"></span>
   <div class="container">
-    <div class="roof-band__lead reveal-left">
-      <span class="eyebrow">One licensed roof</span>
-      <h2>Every trade handled by the same crew</h2>
-      <p>Most contractors sub out half the job. A&amp;S Contracting Services keeps all ten trades in-house, so the people who quote your project are the people who finish it.</p>
-      <span class="roof-band__note"><?php echo icon('handshake', 18); ?> One team &middot; one point of contact</span>
+    <div class="reveal-up">
+      <span class="eyebrow">Storm season doesn&rsquo;t wait</span>
+      <h2>Hail or wind damage? Get it documented before the next storm.</h2>
+      <p>A&amp;S Contracting Services inspects roofing, siding, and gutter damage, documents it for your insurer, and gives you a written estimate&mdash;fast, and at no cost.</p>
     </div>
-    <ul class="roof-list reveal-right">
-      <?php foreach ($services as $svc): ?>
-      <li><?php echo icon('check', 18); ?> <?php echo htmlspecialchars($svc['name']); ?></li>
-      <?php endforeach; ?>
-    </ul>
+    <div class="actions">
+      <a href="#estimate" class="btn btn-accent btn-lg">Get my free estimate</a>
+      <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-outline-white btn-lg"><?php echo icon('phone', 18); ?> <?php echo $phone; ?></a>
+    </div>
   </div>
 </section>
 
@@ -294,55 +379,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       </div>
 
       <div class="about-right reveal-right">
-        <div class="creds-panel">
-          <h3>Under one licensed, insured roof</h3>
-          <p>A single accountable team across Warren County and central Missouri&mdash;no trade gaps, no subcontracted surprises.</p>
-          <ul>
-            <li><?php echo icon('badge-check', 20); ?> Licensed Missouri general contractor</li>
-            <li><?php echo icon('shield-check', 20); ?> Fully insured on every project</li>
-            <li><?php echo icon('users', 20); ?> Same crew from start to finish</li>
-            <li><?php echo icon('clipboard-list', 20); ?> Detailed written estimates</li>
-          </ul>
+        <div class="about-photo">
+          <?php echo p1_picture($aboutImage, $aboutImageAlt, [
+              'sizes'  => '(max-width: 900px) 100vw, 520px',
+              'width'  => 600,
+              'height' => 750,
+          ]); ?>
         </div>
         <div class="about-stat-card">
           <span class="stat-number" style="font-size:1.9rem;"><?php echo $yearsInBusiness; ?> yrs</span>
           <span class="stat-label">building in Warren County</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════ MID-PAGE CTA BANNER ═══════════════════════ -->
-<section class="cta-banner texture-grain edge-curve-top" aria-label="Request a free estimate">
-  <span class="grain-layer" aria-hidden="true"></span>
-  <div class="container">
-    <div class="reveal-up">
-      <span class="eyebrow">Storm season doesn&rsquo;t wait</span>
-      <h2>Hail or wind damage? Get it documented before the next storm.</h2>
-      <p>A&amp;S Contracting Services inspects roofing, siding, and gutter damage, documents it for your insurer, and gives you a written estimate&mdash;fast, and at no cost.</p>
-    </div>
-    <div class="actions">
-      <a href="#estimate" class="btn btn-accent btn-lg">Get my free estimate</a>
-      <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-outline-white btn-lg"><?php echo icon('phone', 18); ?> <?php echo $phone; ?></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════ FAQ ═══════════════════════ -->
-<section class="section section--light" aria-label="Frequently asked questions">
-  <div class="container-narrow">
-    <div class="section-title reveal-up">
-      <span class="eyebrow-label">Good Questions</span>
-      <h2>What Warrenton homeowners ask <span class="text-accent">before hiring</span></h2>
-    </div>
-    <div class="faq-grid">
-      <?php foreach ($faqs as $fi => $faq): ?>
-      <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
-        <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
-        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
-      </details>
-      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -359,7 +407,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 
     <div class="reviews-track">
       <?php foreach ($reviews as $rev):
-        $meta = $reviewMeta[$rev['author']] ?? ['loc' => 'Warrenton, MO', 'svc' => 'General Contracting'];
+        $meta    = $reviewMeta[$rev['author']] ?? ['loc' => 'Warrenton, MO', 'svc' => 'General Contracting'];
         $initial = strtoupper(substr($rev['author'], 0, 1));
       ?>
       <article class="review-card">
@@ -386,6 +434,41 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+<!-- ═══════════════════════ FAQ ═══════════════════════ -->
+<section class="section section--light" aria-label="Frequently asked questions">
+  <div class="container-narrow">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Good Questions</span>
+      <h2>What Warrenton homeowners ask <span class="text-accent">before hiring</span></h2>
+    </div>
+    <div class="faq-grid">
+      <?php foreach ($faqs as $fi => $faq): ?>
+      <details class="faq"<?php echo $fi < 2 ? ' open' : ''; ?>>
+        <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
+        <p><?php echo htmlspecialchars($faq['answer']); ?></p>
+      </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TICKER STRIP ═══════════════════════ -->
+<div class="ticker-strip" aria-hidden="true">
+  <div class="ticker-track">
+    <?php
+    $tickerItems = [
+      ['home', 'Roofing'], ['layers', 'Siding'], ['droplets', 'Seamless Gutters'],
+      ['wind', 'Soffit &amp; Fascia'], ['building', 'Windows &amp; Doors'], ['paint-bucket', 'Drywall &amp; Interiors'],
+      ['hammer', 'Exterior Work'], ['shield-check', 'Licensed &amp; Insured'], ['users', 'No Subcontractors'], ['badge-check', 'Free Estimates'],
+    ];
+    // Duplicate the set for a seamless loop
+    for ($rep = 0; $rep < 2; $rep++):
+      foreach ($tickerItems as $ti): ?>
+      <span><?php echo icon($ti[0], 18); ?> <?php echo $ti[1]; ?></span>
+    <?php endforeach; endfor; ?>
+  </div>
+</div>
+
 <!-- ═══════════════════════ FROM THE BLOG ═══════════════════════ -->
 <?php
 // Blog registry for homepage preview
@@ -395,19 +478,20 @@ $featuredPost = $blogPosts[0] ?? null;
 <?php if ($featuredPost): ?>
 <section class="section bg-surface" id="blog-preview" aria-label="From the blog">
   <div class="container container-narrow">
-    <header class="section-header text-center">
-      <span class="eyebrow-label">Expert Advice & Insights</span>
+    <header class="section-header text-center reveal-up">
+      <span class="eyebrow-label">Expert Advice &amp; Insights</span>
       <h2>From the Blog</h2>
       <p class="lead">Practical guidance on roofing, siding, and home improvements from licensed Missouri contractors.</p>
     </header>
 
-    <article class="blog-featured-card">
+    <article class="blog-featured-card reveal-up">
       <div class="blog-featured-card__image">
         <?php if (!empty($featuredPost['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $featuredPost['image'])): ?>
         <img
           src="<?php echo $featuredPost['image']; ?>"
           alt="<?php echo htmlspecialchars($featuredPost['alt']); ?>"
           loading="lazy"
+          decoding="async"
           width="800"
           height="450"
         >
@@ -452,9 +536,9 @@ $featuredPost = $blogPosts[0] ?? null;
 
 .blog-featured-card__image {
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .blog-featured-card__image img {
@@ -470,7 +554,7 @@ $featuredPost = $blogPosts[0] ?? null;
   background: var(--color-accent);
   color: var(--color-primary);
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -510,7 +594,7 @@ $featuredPost = $blogPosts[0] ?? null;
 }
 
 .blog-featured-card__title a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-dark);
 }
 
 .blog-featured-card__excerpt {
@@ -542,7 +626,7 @@ $featuredPost = $blogPosts[0] ?? null;
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <?php echo p1_attribution_fields('cta-band'); ?>
+          <?php echo p1_attribution_fields('estimate-section'); ?>
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
 

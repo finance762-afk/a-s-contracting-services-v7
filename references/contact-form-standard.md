@@ -1,31 +1,29 @@
-# Contact Form Standard — Full Spec (Formsubmit.co, 2026-07-11)
+# Contact Form Standard — Full Spec (Page One leads endpoint, 2026-09-08)
 
 > Loaded on demand. CLAUDE.md → "Contact Form Submission" carries the hard rules; this file carries the full copy-verbatim form markup, field rules, and submission flow. Read this file BEFORE writing any contact form.
 
-New builds submit contact forms via **Formsubmit.co** to the client's email. Use the exact `form_action` URL from `build-plan.json` — it is `https://formsubmit.co/{client email}`. Customer Service is CC'd on every submission via the `_cc` field.
+Every build submits contact forms to the **Page One leads endpoint** — `https://db.pageone.cloud/functions/v1/leads/{slug}` — which stores the lead in `portal_leads`, runs the spam shield, links the deal, and emails the client + Customer Service. Use the exact `form_action` URL from `build-plan.json`. **Formsubmit.co is retired (Sep 2026) — never emit a formsubmit.co action.**
 
-> **Legacy note:** sites migrated in June 2026 post to a Page One lead endpoint (`db.pageone.cloud/functions/v1/leads/{slug}` or `design.pageone.cloud/api/leads/{slug}`). Those are still valid — do NOT rewrite an existing site's form action in either direction unless explicitly instructed.
+> **Legacy note:** a few older sites still post to `design.pageone.cloud/api/leads/{slug}` (dead) or formsubmit.co — repoint them to `db.pageone.cloud/functions/v1/leads/{slug}` when touched, then run `~/crm/scripts/patch-leads-spamshield.py` so the `_ft`/`_js` shield fields are present.
 
 ### Form action URL
 
 ```
-https://formsubmit.co/{client email}    ← use form_action from build-plan.json verbatim
+https://db.pageone.cloud/functions/v1/leads/{slug}    ← use form_action from build-plan.json verbatim
 ```
 
 ### Required form markup
 
 ```html
-<form action="https://formsubmit.co/owner@example-client.com" method="POST">
+<form action="<?php echo htmlspecialchars($formAction); ?>" method="POST">
 
   <!-- Honeypot — MUST be hidden from users, bots fill it out -->
   <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-  <!-- Formsubmit.co directives -->
+  <!-- Redirect after the endpoint accepts the lead (303) -->
   <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_subject" value="New lead from <?php echo htmlspecialchars($siteName); ?>">
-  <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
+  <!-- Spam shield (_ft signed timestamp + _js interaction flag) is injected by
+       ~/crm/scripts/patch-leads-spamshield.py — promote-v7.sh runs it; run it manually on hand builds -->
 
   <!-- v6.3 attribution: submit page, page type, first-touch landing page, UTM, session (includes/attribution.php) -->
   <?php echo p1_attribution_fields('contact'); ?>

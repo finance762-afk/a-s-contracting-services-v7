@@ -151,6 +151,47 @@ function generateMetaTags($title, $description, $canonical) {
 }
 
 /**
+ * Render a responsive <picture> for a local /assets/images/ photo.
+ *
+ * Emits an AVIF <source> + WebP <img srcset> using ONLY the variant files that
+ * actually exist on disk (the pipeline generates -480/-960/-1600 in webp+avif,
+ * but not every photo has a -1600). Never references a missing file.
+ *
+ * @param string $base Filename WITHOUT extension (the .jpg base name)
+ * @param string $alt  Alt text (descriptive; "" for decorative)
+ * @param array  $opts sizes|width|height|loading|fetchpriority|decoding|imgClass
+ * @return string <picture> markup (falls back to a plain <img> if no variants)
+ */
+function p1_picture($base, $alt, $opts = []) {
+    $dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/';
+    $webset = [];
+    $aviset = [];
+    foreach ([480, 960, 1600] as $w) {
+        if (file_exists($dir . $base . '-' . $w . '.webp')) $webset[] = "/assets/images/{$base}-{$w}.webp {$w}w";
+        if (file_exists($dir . $base . '-' . $w . '.avif')) $aviset[] = "/assets/images/{$base}-{$w}.avif {$w}w";
+    }
+
+    $sizes    = $opts['sizes']    ?? '100vw';
+    $loading  = $opts['loading']  ?? 'lazy';
+    $decoding = $opts['decoding'] ?? ($loading === 'eager' ? 'sync' : 'async');
+
+    $attrs  = ' alt="' . htmlspecialchars($alt) . '"';
+    $attrs .= isset($opts['width'])  ? ' width="' . (int)$opts['width'] . '"'   : '';
+    $attrs .= isset($opts['height']) ? ' height="' . (int)$opts['height'] . '"' : '';
+    $attrs .= ' loading="' . htmlspecialchars($loading) . '" decoding="' . htmlspecialchars($decoding) . '"';
+    $attrs .= !empty($opts['fetchpriority']) ? ' fetchpriority="' . htmlspecialchars($opts['fetchpriority']) . '"' : '';
+    $attrs .= !empty($opts['imgClass'])      ? ' class="' . htmlspecialchars($opts['imgClass']) . '"'            : '';
+
+    $out = '<picture>';
+    if ($aviset) $out .= '<source type="image/avif" srcset="' . implode(', ', $aviset) . '" sizes="' . htmlspecialchars($sizes) . '">';
+    $out .= '<img src="/assets/images/' . htmlspecialchars($base) . '.jpg"';
+    if ($webset) $out .= ' srcset="' . implode(', ', $webset) . '" sizes="' . htmlspecialchars($sizes) . '"';
+    $out .= $attrs . '></picture>';
+
+    return $out;
+}
+
+/**
  * Render an inline SVG icon from references/lucide-icons/
  * @param string $name Icon name (without .svg extension)
  * @param int $size Icon width/height in pixels (default 24)
