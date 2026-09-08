@@ -204,6 +204,7 @@ section, .section { position: relative; padding-block: var(--section-pad); overf
 .site-header--dark .navbar-cta .btn-primary:hover, .site-header--dark .header-cta .btn-primary:hover { background: var(--color-accent-bright); border-color: var(--color-accent-bright); color: var(--color-dark); }
 .site-header--dark .hamburger .hamburger-line { background: #fff; }
 .site-header--dark .hamburger span { background: #fff; }
+.site-header .navbar, .site-header .header-inner, .site-header .navbar-inner { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; } /* the bar is painted by .site-header only — a phase-2 critical.css shipped .navbar{background:rgba(255,255,255,.72)} that turned a dark header light gray (A&S 2026-09-08) */
 .header-inner, .navbar-inner { height: 100%; display: flex; align-items: center; gap: 1rem; white-space: nowrap; }
 .site-logo, .navbar-logo, .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--color-ink); margin-right: auto; }
 .site-logo img, .navbar-logo img { height: 96px; width: auto; max-width: 260px; object-fit: contain; transition: height .25s var(--ease); }
@@ -448,6 +449,8 @@ body.menu-open .site-header { z-index: 960; } /* keep the bar (and the hamburger
 .reviews-track::-webkit-scrollbar { display: none; }
 .review-card { flex: 0 0 min(360px, 85vw); scroll-snap-align: start; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); padding: 1.35rem; backdrop-filter: blur(8px); display: grid; gap: .6rem; color: #fff; }
 .review-stars, .star { color: var(--color-star); }
+.review-stars, .stars, .rating-stars { display: flex; align-items: center; gap: .15rem; }
+.review-stars svg, .stars svg, .rating-stars svg { fill: currentColor; } /* lucide star is an outline — filled reads as a rating */ /* critical.css sets svg{display:block} — without flex the five stars stack vertically (A&S 2026-09-08) */
 .review-text { font-size: .98rem; line-height: 1.55; color: rgba(255,255,255,.88); margin: 0; }
 .review-author { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: rgba(255,255,255,.7); }
 .review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--color-accent); color: var(--color-ink); display: grid; place-items: center; font-weight: 700; }
