@@ -383,6 +383,149 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
   </div>
 </section>
 
+<!-- ═══════════════════════ FROM THE BLOG ═══════════════════════ -->
+<?php
+// Blog registry for homepage preview
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
+$featuredPost = $blogPosts[0] ?? null;
+?>
+<?php if ($featuredPost): ?>
+<section class="section bg-surface" id="blog-preview" aria-label="From the blog">
+  <div class="container container-narrow">
+    <header class="section-header text-center">
+      <span class="eyebrow-label">Expert Advice & Insights</span>
+      <h2>From the Blog</h2>
+      <p class="lead">Practical guidance on roofing, siding, and home improvements from licensed Missouri contractors.</p>
+    </header>
+
+    <article class="blog-featured-card">
+      <div class="blog-featured-card__image">
+        <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $featuredPost['image'])): ?>
+        <img
+          src="<?php echo $featuredPost['image']; ?>"
+          alt="<?php echo htmlspecialchars($featuredPost['alt']); ?>"
+          loading="lazy"
+          width="800"
+          height="450"
+        >
+        <?php endif; ?>
+        <span class="blog-featured-card__category"><?php echo htmlspecialchars($featuredPost['category']); ?></span>
+      </div>
+      <div class="blog-featured-card__body">
+        <div class="blog-meta">
+          <span class="blog-meta__item">
+            <?php echo icon('calendar', 16); ?>
+            <?php echo htmlspecialchars($featuredPost['date']); ?>
+          </span>
+          <span class="blog-meta__item">
+            <?php echo icon('clock', 16); ?>
+            <?php echo htmlspecialchars($featuredPost['readtime']); ?>
+          </span>
+        </div>
+        <h3 class="blog-featured-card__title">
+          <a href="/blog/<?php echo $featuredPost['slug']; ?>/"><?php echo htmlspecialchars($featuredPost['title']); ?></a>
+        </h3>
+        <p class="blog-featured-card__excerpt"><?php echo htmlspecialchars($featuredPost['excerpt']); ?></p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="/blog/<?php echo $featuredPost['slug']; ?>/" class="btn btn-primary">
+            Read Article <?php echo icon('arrow-right', 18); ?>
+          </a>
+          <a href="/blog/" class="btn btn-secondary">View All Articles</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+/* Blog Featured Card Styles */
+.blog-featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.blog-featured-card__image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.blog-featured-card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-featured-card__category {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-featured-card__body {
+  padding: 0;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.blog-meta__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-featured-card__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.blog-featured-card__title a {
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-featured-card__title a:hover {
+  color: var(--color-accent);
+}
+
+.blog-featured-card__excerpt {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .blog-featured-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+</style>
+<?php endif; ?>
+
 <!-- ═══════════════════════ ESTIMATE SECTION ═══════════════════════ -->
 <section class="section" id="estimate" aria-label="Request your free estimate">
   <div class="container">
