@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage     = 'thank-you';
 $pageTitle       = 'Thank You';
-$metaDescription = 'Thank you for contacting A&S Contracting Services. We will respond to your inquiry within one business day.';
+$pageDescription = 'Thank you for contacting A&S Contracting Services. We will respond to your inquiry within one business day.';
 $canonicalUrl    = $siteUrl . '/thank-you/';
 $noindex         = true;  // Don't index thank-you pages
 

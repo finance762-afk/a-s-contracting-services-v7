@@ -5,7 +5,7 @@
  *
  * Required variables set by each page before including:
  *   $pageTitle       — Page-specific title (will be combined with site name)
- *   $metaDescription — Page-specific description
+ *   $pageDescription — Page-specific description
  *   $canonicalUrl    — Self-referencing canonical URL
  *   $currentPage     — Page identifier for active nav state
  *
@@ -36,7 +36,7 @@ if (!isset($ogImage)) {
 <?php
 // SEO Meta Tags
 echo '<title>' . htmlspecialchars($fullTitle) . '</title>' . "\n";
-echo '<meta name="description" content="' . htmlspecialchars($metaDescription) . '">' . "\n";
+echo '<meta name="description" content="' . htmlspecialchars($pageDescription) . '">' . "\n";
 
 // Noindex for thank-you, legal pages when needed
 if (isset($noindex) && $noindex === true) {
@@ -50,7 +50,7 @@ echo '<link rel="canonical" href="' . htmlspecialchars($canonicalUrl) . '">' . "
 <!-- Open Graph Tags -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle . ' | ' . $siteName); ?>">
-<meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+<meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>">
 <meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl); ?>">
 <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
 <meta property="og:site_name" content="<?php echo htmlspecialchars($siteName); ?>">

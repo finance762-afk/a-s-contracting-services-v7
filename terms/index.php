@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'terms';
 $pageTitle         = 'Terms of Service';
-$metaDescription   = 'Terms and conditions governing use of the A&S Contracting Services website and engagement of our services.';
+$pageDescription   = 'Terms and conditions governing use of the A&S Contracting Services website and engagement of our services.';
 $canonicalUrl      = $siteUrl . '/terms/';
 $lastUpdated       = date('F j, Y');
 
@@ -26,7 +26,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Exterior Work';
 $pageTitle       = 'Exterior Work in Warrenton, MO';
-$metaDescription = 'Whole-home exterior contractor in Warrenton, MO. A&S Contracting Services runs siding, roofing, gutters, soffit and fascia with one crew. Free written estimate.';
+$pageDescription = 'Whole-home exterior contractor in Warrenton, MO. A&S Contracting Services runs siding, roofing, gutters, soffit and fascia with one crew. Free written estimate.';
 $canonicalUrl    = $siteUrl . '/services/exterior-work/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

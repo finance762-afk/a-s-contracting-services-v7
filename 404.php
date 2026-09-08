@@ -1,12 +1,15 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+
+// Set HTTP 404 status code
+http_response_code(404);
 ?>
 <?php
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage     = '404';
 $pageTitle       = 'Page Not Found';
-$metaDescription = 'The page you are looking for could not be found. Return to the homepage or contact A&S Contracting Services for assistance.';
+$pageDescription = 'The page you are looking for could not be found. Return to the homepage or contact A&S Contracting Services for assistance.';
 $canonicalUrl    = $siteUrl . '/404/';
 $noindex         = true;  // Don't index 404 pages
 

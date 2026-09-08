@@ -23,7 +23,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'jonesburg';
 $pageTitle = 'Roofing, Siding & General Contracting in Jonesburg, MO';
-$metaDescription = 'A&S Contracting Services serves Jonesburg, MO, with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work in Montgomery and Warren counties. Free estimates—no subcontractors.';
+$pageDescription = 'A&S Contracting Services serves Jonesburg, MO, with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work in Montgomery and Warren counties. Free estimates—no subcontractors.';
 $canonicalUrl = $siteUrl . '/areas/jonesburg/';
 $currentPage = 'service-areas';
 

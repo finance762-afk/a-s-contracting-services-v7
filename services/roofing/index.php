@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Roofing';
 $pageTitle       = 'Roofing in Warrenton, MO';
-$metaDescription = 'Roofing contractor in Warrenton, MO. A&S Contracting Services self-performs roof repair, tear-off, and full replacement across Warren County—storm and hail claims handled. Free written estimates.';
+$pageDescription = 'Roofing contractor in Warrenton, MO. A&S Contracting Services self-performs roof repair, tear-off, and full replacement across Warren County—storm and hail claims handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/roofing/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

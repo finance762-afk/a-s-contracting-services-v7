@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'cookie-policy';
 $pageTitle         = 'Cookie Policy';
-$metaDescription   = 'How A&S Contracting Services uses cookies and tracking technologies on our website.';
+$pageDescription   = 'How A&S Contracting Services uses cookies and tracking technologies on our website.';
 $canonicalUrl      = $siteUrl . '/cookie-policy/';
 $lastUpdated       = date('F j, Y');
 
@@ -25,7 +25,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

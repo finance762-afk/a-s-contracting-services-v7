@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'faq';
 $currentPage     = 'faq';
 $pageTitle       = 'Frequently Asked Questions';
-$metaDescription = 'Common questions about A&S Contracting Services. Learn about our pricing, process, service area, timelines, and what to expect when you hire us for roofing, siding, or remodeling in Warrenton, MO.';
+$pageDescription = 'Common questions about A&S Contracting Services. Learn about our pricing, process, service area, timelines, and what to expect when you hire us for roofing, siding, or remodeling in Warrenton, MO.';
 $canonicalUrl    = $siteUrl . '/faq/';
 
 // FAQ data organized by category
@@ -116,7 +116,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

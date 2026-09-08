@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'Roof Replacement Cost Guide for Missouri Homeowners';
-$metaDescription = 'What does a new roof cost in Missouri? Licensed contractor breaks down material costs, labor rates, and hidden factors that affect your quote. Compare asphalt shingle, metal, and flat roof pricing.';
+$pageDescription = 'What does a new roof cost in Missouri? Licensed contractor breaks down material costs, labor rates, and hidden factors that affect your quote. Compare asphalt shingle, metal, and flat roof pricing.';
 $canonicalUrl = $siteUrl . '/blog/roof-replacement-cost-guide-missouri/';
 $currentPage = 'blog';
 
@@ -18,7 +18,7 @@ $schema = <<<SCHEMA
     {
       "@type": "BlogPosting",
       "headline": "{$pageTitle}",
-      "description": "{$metaDescription}",
+      "description": "{$pageDescription}",
       "author": {
         "@type": "Organization",
         "@id": "{$siteUrl}/#organization"

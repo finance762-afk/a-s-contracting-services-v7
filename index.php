@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'home';                       // attribution.php page identity
 $currentPage     = 'home';
 $pageTitle       = 'General Contractor in Warrenton, MO';
-$metaDescription = 'A&S Contracting Services is a licensed, insured general contractor in Warrenton, MO. Self-performed roofing, siding, gutters, drywall & remodels within 50 miles. Free estimates.';
+$pageDescription = 'A&S Contracting Services is a licensed, insured general contractor in Warrenton, MO. Self-performed roofing, siding, gutters, drywall & remodels within 50 miles. Free estimates.';
 $canonicalUrl    = $siteUrl . '/';
 
 // Homepage services grid: show the first 8, link to the full list.

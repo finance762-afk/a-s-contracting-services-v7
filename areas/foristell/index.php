@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'foristell';
 $pageTitle = 'Roofing, Siding & General Contracting in Foristell, MO';
-$metaDescription = 'A&S Contracting Services serves Foristell homeowners with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work—no subcontractors. Free estimates for St. Charles and Warren County properties.';
+$pageDescription = 'A&S Contracting Services serves Foristell homeowners with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work—no subcontractors. Free estimates for St. Charles and Warren County properties.';
 $canonicalUrl = $siteUrl . '/areas/foristell/';
 $currentPage = 'service-areas';
 

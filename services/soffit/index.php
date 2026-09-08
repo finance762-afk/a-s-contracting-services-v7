@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Soffit';
 $pageTitle       = 'Soffit in Warrenton, MO';
-$metaDescription = 'Soffit installation in Warrenton, MO. A&S Contracting Services installs and repairs vented soffit across Warren County—attic airflow restored, pests sealed out. Free written estimates.';
+$pageDescription = 'Soffit installation in Warrenton, MO. A&S Contracting Services installs and repairs vented soffit across Warren County—attic airflow restored, pests sealed out. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/soffit/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

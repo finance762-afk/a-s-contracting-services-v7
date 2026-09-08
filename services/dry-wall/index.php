@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Dry Wall';
 $pageTitle       = 'Dry Wall in Warrenton, MO';
-$metaDescription = 'Drywall contractor in Warrenton, MO. A&S Contracting Services hangs, tapes, textures and repairs drywall in Warren County. Free paint-ready estimate.';
+$pageDescription = 'Drywall contractor in Warrenton, MO. A&S Contracting Services hangs, tapes, textures and repairs drywall in Warren County. Free paint-ready estimate.';
 $canonicalUrl    = $siteUrl . '/services/dry-wall/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

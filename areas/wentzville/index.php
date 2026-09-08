@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'wentzville';
 $pageTitle = 'Roofing, Siding & Renovation Services in Wentzville, MO';
-$metaDescription = 'A&S Contracting Services serves Wentzville, MO—fast-growing St. Charles County suburb. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
+$pageDescription = 'A&S Contracting Services serves Wentzville, MO—fast-growing St. Charles County suburb. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
 $canonicalUrl = $siteUrl . '/areas/wentzville/';
 $currentPage = 'service-areas';
 

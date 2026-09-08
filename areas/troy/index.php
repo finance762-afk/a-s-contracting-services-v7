@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'troy';
 $pageTitle = 'Roofing, Siding & Renovation Services in Troy, MO';
-$metaDescription = 'A&S Contracting Services serves Troy, MO—county seat of Lincoln County. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
+$pageDescription = 'A&S Contracting Services serves Troy, MO—county seat of Lincoln County. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
 $canonicalUrl = $siteUrl . '/areas/troy/';
 $currentPage = 'service-areas';
 

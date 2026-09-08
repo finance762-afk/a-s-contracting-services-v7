@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'General Contracting';
 $pageTitle       = 'General Contracting in Warrenton, MO';
-$metaDescription = 'General contractor in Warrenton, MO. A&S Contracting Services manages residential and commercial projects end to end across Warren County. Free estimate.';
+$pageDescription = 'General contractor in Warrenton, MO. A&S Contracting Services manages residential and commercial projects end to end across Warren County. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/general-contracting/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

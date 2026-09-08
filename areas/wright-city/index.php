@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'wright-city';
 $pageTitle = 'Roofing, Siding & General Contracting in Wright City, MO';
-$metaDescription = 'A&S Contracting Services serves Wright City homeowners with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work—no subcontractors. Free estimates for Warren County properties.';
+$pageDescription = 'A&S Contracting Services serves Wright City homeowners with licensed roofing, siding, gutters, and full-scale renovations. Self-performed work—no subcontractors. Free estimates for Warren County properties.';
 $canonicalUrl = $siteUrl . '/areas/wright-city/';
 $currentPage = 'service-areas';
 

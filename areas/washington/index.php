@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType = 'city';
 $citySlug = 'washington';
 $pageTitle = 'Roofing, Siding & General Contracting in Washington, MO';
-$metaDescription = 'A&S Contracting Services serves Washington, MO—Franklin County seat on the Missouri River. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
+$pageDescription = 'A&S Contracting Services serves Washington, MO—Franklin County seat on the Missouri River. Licensed roofing, siding, gutters, and full-scale renovations. Self-performed work, no subcontractors. Free estimates.';
 $canonicalUrl = $siteUrl . '/areas/washington/';
 $currentPage = 'service-areas';
 

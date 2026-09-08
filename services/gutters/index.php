@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Gutters';
 $pageTitle       = 'Gutters in Warrenton, MO';
-$metaDescription = 'Gutter installation in Warrenton, MO. A&S Contracting Services forms seamless aluminum gutters on site across Warren County—downspouts, guards, and repairs handled. Free written estimates.';
+$pageDescription = 'Gutter installation in Warrenton, MO. A&S Contracting Services forms seamless aluminum gutters on site across Warren County—downspouts, guards, and repairs handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/gutters/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

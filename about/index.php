@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'about';
 $currentPage     = 'about';
 $pageTitle       = 'About Us';
-$metaDescription = 'Learn about A&S Contracting Services, a licensed Missouri general contractor in Warrenton, MO. Self-performed roofing, siding, gutters & remodels across Warren County. Same crew start to finish.';
+$pageDescription = 'Learn about A&S Contracting Services, a licensed Missouri general contractor in Warrenton, MO. Self-performed roofing, siding, gutters & remodels across Warren County. Same crew start to finish.';
 $canonicalUrl    = $siteUrl . '/about/';
 
 // BreadcrumbList schema
@@ -19,7 +19,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

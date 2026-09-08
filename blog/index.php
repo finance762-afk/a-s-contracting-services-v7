@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageTitle = 'Blog';
-$metaDescription = 'Expert advice on roofing, siding, gutters, and home renovations from A&S Contracting Services. Learn about Missouri-specific building challenges, material choices, and maintenance tips from licensed contractors.';
+$pageDescription = 'Expert advice on roofing, siding, gutters, and home renovations from A&S Contracting Services. Learn about Missouri-specific building challenges, material choices, and maintenance tips from licensed contractors.';
 $canonicalUrl = $siteUrl . '/blog/';
 $currentPage = 'blog';
 

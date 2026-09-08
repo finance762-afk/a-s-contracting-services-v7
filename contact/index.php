@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'contact';
 $currentPage     = 'contact';
 $pageTitle       = 'Contact Us';
-$metaDescription = 'Contact A&S Contracting Services for a free estimate. Licensed Missouri general contractor serving Warrenton and Warren County. Call (636) 359-7204 or submit a contact form.';
+$pageDescription = 'Contact A&S Contracting Services for a free estimate. Licensed Missouri general contractor serving Warrenton and Warren County. Call (636) 359-7204 or submit a contact form.';
 $canonicalUrl    = $siteUrl . '/contact/';
 
 // BreadcrumbList schema
@@ -19,7 +19,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

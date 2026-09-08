@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 $pageType        = 'other';
 $currentPage     = 'services';
 $pageTitle       = 'Services in Warrenton, MO';
-$metaDescription = 'A&S Contracting Services self-performs roofing, siding, gutters, soffit, fascia, windows, drywall, and full interior and exterior remodels across Warrenton, MO and Warren County. Free estimates.';
+$pageDescription = 'A&S Contracting Services self-performs roofing, siding, gutters, soffit, fascia, windows, drywall, and full interior and exterior remodels across Warrenton, MO and Warren County. Free estimates.';
 $canonicalUrl    = $siteUrl . '/services/';
 
 // Icons + one-line descriptions per service card

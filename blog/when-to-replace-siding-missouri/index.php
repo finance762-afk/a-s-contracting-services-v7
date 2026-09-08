@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-data.php';
 
 $pageType = 'blog';
 $pageTitle = 'When to Replace Your Siding: Warning Signs Missouri Homeowners Miss';
-$metaDescription = 'Cracked siding isn\'t always obvious. Learn early warning signs—warping, moisture intrusion, rising energy bills—and when repair stops being cost-effective. Licensed contractor advice for Missouri homes.';
+$pageDescription = 'Cracked siding isn\'t always obvious. Learn early warning signs—warping, moisture intrusion, rising energy bills—and when repair stops being cost-effective. Licensed contractor advice for Missouri homes.';
 $canonicalUrl = $siteUrl . '/blog/when-to-replace-siding-missouri/';
 $currentPage = 'blog';
 
@@ -18,7 +18,7 @@ $schema = <<<SCHEMA
     {
       "@type": "BlogPosting",
       "headline": "{$pageTitle}",
-      "description": "{$metaDescription}",
+      "description": "{$pageDescription}",
       "author": {
         "@type": "Organization",
         "@id": "{$siteUrl}/#organization"

@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Windows & Doors';
 $pageTitle       = 'Windows & Doors in Warrenton, MO';
-$metaDescription = 'Window and door replacement in Warrenton, MO. A&S Contracting Services installs energy-efficient windows and doors—flashed, sealed, and self-performed across Warren County. Free written estimates.';
+$pageDescription = 'Window and door replacement in Warrenton, MO. A&S Contracting Services installs energy-efficient windows and doors—flashed, sealed, and self-performed across Warren County. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/windows-doors/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

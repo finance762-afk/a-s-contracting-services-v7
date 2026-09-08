@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Fascia';
 $pageTitle       = 'Fascia in Warrenton, MO';
-$metaDescription = 'Fascia board replacement and aluminum wrap in Warrenton, MO. A&S Contracting Services rebuilds rotted rooflines and re-hangs gutters level across Warren County. Free written estimates.';
+$pageDescription = 'Fascia board replacement and aluminum wrap in Warrenton, MO. A&S Contracting Services rebuilds rotted rooflines and re-hangs gutters level across Warren County. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/fascia/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

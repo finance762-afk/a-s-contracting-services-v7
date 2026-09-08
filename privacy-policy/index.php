@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'privacy-policy';
 $pageTitle         = 'Privacy Policy';
-$metaDescription   = 'How A&S Contracting Services collects, uses, and protects your information. Privacy practices for our website and contact forms.';
+$pageDescription   = 'How A&S Contracting Services collects, uses, and protects your information. Privacy practices for our website and contact forms.';
 $canonicalUrl      = $siteUrl . '/privacy-policy/';
 $lastUpdated       = date('F j, Y');
 
@@ -27,7 +27,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',

@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Siding';
 $pageTitle       = 'Siding in Warrenton, MO';
-$metaDescription = 'Siding contractor in Warrenton, MO. A&S Contracting Services installs and repairs vinyl, insulated, and fiber-cement siding across Warren County—storm panel replacement handled. Free written estimates.';
+$pageDescription = 'Siding contractor in Warrenton, MO. A&S Contracting Services installs and repairs vinyl, insulated, and fiber-cement siding across Warren County—storm panel replacement handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/siding/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

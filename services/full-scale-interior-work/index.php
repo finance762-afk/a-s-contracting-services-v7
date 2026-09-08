@@ -9,7 +9,7 @@ $pageType        = 'service';
 $currentPage     = 'services';
 $svcName         = 'Full Scale Interior Work';
 $pageTitle       = 'Full Scale Interior Work in Warrenton, MO';
-$metaDescription = 'Full-scale interior remodeling in Warrenton, MO. A&S Contracting Services self-performs drywall, trim, paint, flooring, and additions across Warren County with one accountable crew. Free written estimates.';
+$pageDescription = 'Full-scale interior remodeling in Warrenton, MO. A&S Contracting Services self-performs drywall, trim, paint, flooring, and additions across Warren County with one accountable crew. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/full-scale-interior-work/';
 
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────

@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 // ─── Page-level setup ───────────────────────────────────────────────────────
 $currentPage       = 'accessibility';
 $pageTitle         = 'Accessibility Statement';
-$metaDescription   = 'A&S Contracting Services commitment to digital accessibility and WCAG 2.1 Level AA conformance.';
+$pageDescription   = 'A&S Contracting Services commitment to digital accessibility and WCAG 2.1 Level AA conformance.';
 $canonicalUrl      = $siteUrl . '/accessibility/';
 $lastUpdated       = date('F j, Y');
 
@@ -25,7 +25,7 @@ $schemaGraph = [
             '@id' => $canonicalUrl . '#webpage',
             'url' => $canonicalUrl,
             'name' => $pageTitle,
-            'description' => $metaDescription,
+            'description' => $pageDescription,
         ],
         [
             '@type' => 'BreadcrumbList',
