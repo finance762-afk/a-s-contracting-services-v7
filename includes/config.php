@@ -202,15 +202,16 @@ $leadNotificationEmail = 'blake@ascontractingservices.com';
 $leadNotificationPhone = '+16363597204';
 
 // ─── Form Action (Formsubmit.co — 2026-07-11 standard) ───────────────────────
-$formAction = 'https://formsubmit.co/blake@ascontractingservices.com';
+$formAction = 'https://db.pageone.cloud/functions/v1/leads/a-s-contracting-services'; // Page One leads endpoint (no Formsubmit, Sep 2026)
 
 // ─── Tier ──────────────────────────────────────────────────────────────────
 $tier = 'premium';   // basic | standard | premium
 
 // ─── CSS Cache-Bust (SINGLE source of truth) ─────────────────────────────────
 // Bump on every framework.css change. Pages must NEVER set their own $cssVersion.
-$cssVersion = '1';
+$cssVersion = '2';
 
 // ─── Lead Attribution (v6.3) — first-touch cookie + p1_attribution_fields() ───
 // Sets the first-party cookie BEFORE any output. Never edit attribution.php.
 require_once __DIR__ . '/attribution.php';
+$leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'; // spam-shield HMAC (matches leads fn LEADS_FORM_SECRET)

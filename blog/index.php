@@ -260,7 +260,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <?php foreach ($blogPosts as $post): ?>
   <article class="blog-card">
     <div class="blog-card__image">
-      <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $post['image'])): ?>
+      <?php if (!empty($post['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $post['image'])): ?>
       <img
         src="<?php echo $post['image']; ?>"
         alt="<?php echo htmlspecialchars($post['alt']); ?>"

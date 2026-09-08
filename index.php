@@ -127,7 +127,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-text">
         <span class="eyebrow">Warrenton, MO &middot; Serving Warren County since <?php echo $yearEstablished; ?></span>
         <h1 class="hero-title">Warrenton&rsquo;s <span class="text-accent">general contractor</span> for roofs, siding &amp; full remodels</h1>
-        <p class="hero-answer">A&amp;S Contracting Services self-performs roofing, siding, gutters, drywall, and full renovations within 50 miles of Warrenton&mdash;one licensed, insured crew from estimate to walkthrough.</p>
+        <p class="hero-answer">A&amp;S Contracting Services self-performs roofing, siding, gutters, soffit, fascia, windows, drywall, and full interior and exterior renovations for homes and businesses within 50 miles of Warrenton, MO. One licensed, insured crew handles your project from the written estimate to the final walkthrough, with no subcontractors and a free, no-obligation estimate to start.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>
@@ -144,10 +144,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <p class="hero-form-tagline">No obligation. Same-day reply.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New estimate request from <?php echo htmlspecialchars($siteName); ?>">
-          <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <?php echo p1_attribution_fields('hero'); ?>
           <input type="hidden" name="consent_version" value="v2.1">
@@ -163,6 +159,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             </select>
           </div>
           <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
           <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
         </form>
       </aside>
@@ -400,7 +403,7 @@ $featuredPost = $blogPosts[0] ?? null;
 
     <article class="blog-featured-card">
       <div class="blog-featured-card__image">
-        <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $featuredPost['image'])): ?>
+        <?php if (!empty($featuredPost['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $featuredPost['image'])): ?>
         <img
           src="<?php echo $featuredPost['image']; ?>"
           alt="<?php echo htmlspecialchars($featuredPost['alt']); ?>"
@@ -501,7 +504,7 @@ $featuredPost = $blogPosts[0] ?? null;
 }
 
 .blog-featured-card__title a {
-  color: var(--color-heading);
+  color: var(--color-ink);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -539,10 +542,6 @@ $featuredPost = $blogPosts[0] ?? null;
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New estimate request from <?php echo htmlspecialchars($siteName); ?>">
-          <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
           <?php echo p1_attribution_fields('cta-band'); ?>
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
@@ -594,6 +593,13 @@ $featuredPost = $blogPosts[0] ?? null;
             </label>
           </fieldset>
 
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
           <button type="submit" class="btn btn-primary btn-lg btn-block">Send my request</button>
         </form>
       </div>

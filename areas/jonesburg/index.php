@@ -280,11 +280,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     padding: 60px 0;
   }
 }
+.hero--area .container { max-width: 1200px; }
+.hero--area .hero-grid--form { align-items: start; }
+.hero--area .hero-copy .btn-group { margin-bottom: 0; }
+@media (max-width: 900px) { .hero--area .hero-grid--form { grid-template-columns: 1fr; } .hero--area .hero-form-card { display: none; } }
 </style>
 
 <!-- Hero Section -->
 <section class="hero--area">
   <div class="container">
+    <div class="hero-grid hero-grid--form">
+      <div class="hero-copy">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span class="breadcrumb-sep" aria-hidden="true">/</span>
@@ -323,6 +329,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <?php echo icon('phone', 20); ?>
         <?php echo $phone; ?>
       </a>
+    </div>
+  
+      </div>
+      <?php $heroFormTitle = 'Free estimate in Jonesburg'; $heroFormId = 'hero'; include $_SERVER['DOCUMENT_ROOT'] . '/includes/hero-form.php'; ?>
     </div>
   </div>
 </section>

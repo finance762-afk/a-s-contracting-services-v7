@@ -221,7 +221,7 @@ section, .section { position: relative; padding-block: var(--section-pad); overf
 .hamburger.active span:nth-child(2), .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3), .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (max-width: 1000px) { .nav-links, .nav-main, .navbar-links, .header-cta .link-call, .header-actions .link-call, .navbar-phone { display: none; } .hamburger { display: flex; } .site-logo, .navbar-logo, .brand { margin-right: 0; } .header-cta, .header-actions, .navbar-cta { margin-left: auto; } .site-logo img, .navbar-logo img { height: 72px; } .site-header.scrolled .site-logo img { height: 64px; } }
-@media (max-width: 560px) { .header-cta .btn, .header-actions .btn, .navbar-cta .btn-nav-cta { display: none; } .brand-sub, .logo-tagline { display: none; } }
+@media (max-width: 560px) { .header-cta .btn, .header-actions .btn, .navbar-cta .btn-nav-cta, .navbar-cta .btn-primary, .navbar-cta .btn, .header-cta .btn-primary, .header-actions .btn-primary { display: none; } .brand-sub, .logo-tagline { display: none; } }
 
 /* Mobile overlay — lives OUTSIDE <header> (backdrop-filter containing block) */
 .mobile-menu { position: fixed; inset: 0; z-index: 950; background: var(--color-dark); color: #fff; padding: calc(var(--nav-height) + 1rem) clamp(1.25rem, 6vw, 2.5rem) 2rem; overflow-y: auto; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
@@ -252,6 +252,9 @@ body.menu-open .site-header { z-index: 960; } /* keep the bar (and the hamburger
 .hero--light::before { content: ""; position: absolute; inset: auto -10% -30% 55%; height: 120%; z-index: -1; background: radial-gradient(closest-side, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 70%); pointer-events: none; }
 .hero--type { background: var(--color-dark); color: #fff; }
 .hero--type h1 { color: #fff; }
+.hero--type .link-call, .hero--photo .link-call { color: rgba(255,255,255,.88); }
+.hero--type .link-call svg, .hero--photo .link-call svg { color: #fff; }
+.hero--type .link-call:hover, .hero--photo .link-call:hover { color: #fff; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .hero-grid--form { grid-template-columns: minmax(0, 1.15fr) minmax(320px, 400px); }
 .hero-text, .hero-copy { display: grid; gap: 1.1rem; max-width: 36rem; }

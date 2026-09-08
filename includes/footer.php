@@ -158,6 +158,7 @@ if (!isset($siteName)) {
         <span class="footer-legal-divider">|</span>
         <a href="/cookie-policy/">Cookie Policy</a>
         <span class="footer-legal-divider">|</span>
+        <a href="/faq/">FAQ</a>
         <a href="/accessibility/">Accessibility</a>
         <span class="footer-legal-divider">|</span>
         <a href="/privacy-policy/#ccpa-rights">Do Not Sell or Share My Personal Information</a>

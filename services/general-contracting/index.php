@@ -152,10 +152,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <p class="hero-form-tagline">No obligation. Same-day reply.</p>
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="hero-form">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New general contracting estimate request from <?php echo htmlspecialchars($siteName); ?>">
-          <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <?php echo p1_attribution_fields('hero'); ?>
           <input type="hidden" name="consent_version" value="v2.1">
@@ -171,6 +167,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             </select>
           </div>
           <label class="consent"><input type="checkbox" name="terms_accepted" value="yes" required><span>I agree to the <a href="/terms/" target="_blank" rel="noopener">Terms</a> and <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and consent to be contacted. *</span></label>
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
           <button type="submit" class="btn btn-primary btn-block">Get my free estimate</button>
         </form>
       </aside>
@@ -391,10 +394,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <form action="<?php echo htmlspecialchars($formAction); ?>" method="POST" class="estimate-form">
           <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="_next" value="<?php echo htmlspecialchars($siteUrl); ?>/thank-you">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New general contracting estimate request from <?php echo htmlspecialchars($siteName); ?>">
-          <input type="hidden" name="_cc" value="CustomerService@pageoneinsights.com">
           <?php echo p1_attribution_fields('cta-band'); ?>
           <input type="hidden" name="consent_version" value="v2.1">
           <input type="hidden" name="consent_page" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
@@ -442,6 +441,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
             </label>
           </fieldset>
 
+          <!-- spam shield: signed render timestamp + JS interaction signal -->
+          <?php $__ft_ts = (string) time(); ?>
+          <input type="hidden" name="_ft" value="<?php echo $__ft_ts . '.' . hash_hmac('sha256', $__ft_ts, $leadsFormSecret); ?>">
+          <input type="hidden" name="_js" value="" class="js-shield-field">
+          <?php if (empty($GLOBALS['__js_shield'])) { $GLOBALS['__js_shield'] = 1; ?>
+          <script>(function(){var d=document,f=function(){var i,e=d.querySelectorAll('.js-shield-field');for(i=0;i<e.length;i++)e[i].value='1';d.removeEventListener('pointerdown',f);d.removeEventListener('keydown',f);};d.addEventListener('pointerdown',f);d.addEventListener('keydown',f);})();</script>
+          <?php } ?>
           <button type="submit" class="btn btn-primary btn-lg btn-block">Send my request</button>
         </form>
       </div>
