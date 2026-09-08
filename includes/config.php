@@ -209,7 +209,7 @@ $tier = 'premium';   // basic | standard | premium
 
 // ─── CSS Cache-Bust (SINGLE source of truth) ─────────────────────────────────
 // Bump on every framework.css change. Pages must NEVER set their own $cssVersion.
-$cssVersion = '1788902034';
+$cssVersion = '1788902587';
 
 // ─── Lead Attribution (v6.3) — first-touch cookie + p1_attribution_fields() ───
 // Sets the first-party cookie BEFORE any output. Never edit attribution.php.

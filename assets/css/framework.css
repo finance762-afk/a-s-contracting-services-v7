@@ -199,6 +199,11 @@ section, .section { position: relative; padding-block: var(--section-pad); overf
 .site-header--dark .nav-links > li > a, .site-header--dark .nav-main > li > a, .site-header--dark .navbar-links > li > a, .site-header--dark .navbar-links > li > .dropdown-toggle, .site-header--dark .nav-links > li > .dropdown-toggle, .site-header--dark .link-call, .site-header--dark .navbar-phone, .site-header--dark .brand, .site-header--dark .site-logo { color: rgba(255,255,255,.88); }
 .site-header--dark .navbar-links > li > a:hover, .site-header--dark .navbar-links > li > .dropdown-toggle:hover, .site-header--dark .navbar-phone:hover, .site-header--dark .link-call:hover { color: #fff; }
 .site-header--dark .navbar-phone svg, .site-header--dark .link-call svg { color: var(--color-accent-bright); }
+.navbar-cta .btn.navbar-phone, .header-cta .btn.link-call { min-height: 44px; padding: .55rem 1rem; font-size: .95rem; font-weight: 600; gap: .45rem; } /* phone as a button beside the CTA (A&S 2026-09-08) */
+.site-header--dark .navbar-cta .btn.navbar-phone { color: #fff; border-color: rgba(255,255,255,.5); }
+.site-header--dark .navbar-cta .btn.navbar-phone:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+.site-header--dark .navbar-cta .btn.navbar-phone svg { color: #fff; }
+.navbar-cta .btn-primary { min-height: 44px; padding: .55rem 1.1rem; }
 .site-header--dark .navbar-links > li > a::after { background: var(--color-accent-bright); }
 .site-header--dark .navbar-cta .btn-primary, .site-header--dark .header-cta .btn-primary { background: #fff; color: var(--color-dark); border-color: #fff; }
 .site-header--dark .navbar-cta .btn-primary:hover, .site-header--dark .header-cta .btn-primary:hover { background: var(--color-accent-bright); border-color: var(--color-accent-bright); color: var(--color-dark); }

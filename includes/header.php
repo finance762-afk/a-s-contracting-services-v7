@@ -94,7 +94,7 @@ if (!isset($siteName)) {
 
       <!-- Desktop CTA -->
       <div class="navbar-cta">
-        <a href="tel:<?php echo $phoneTel; ?>" class="navbar-phone" aria-label="Call <?php echo $phone; ?>">
+        <a href="tel:<?php echo $phoneTel; ?>" class="btn btn-outline-white navbar-phone" aria-label="Call <?php echo $phone; ?>">
           <?php echo icon('phone', 18); ?>
           <span><?php echo $phone; ?></span>
         </a>
