@@ -128,6 +128,7 @@
     "recommended_hero_image": null
   },
   "design": {
+    "archetype": "bold-industrial",
     "fonts": {},
     "notes": "v7 rebuild of a-s-contracting-services (live: https://ascontractingservices.com). Keep brand continuity: Modern minimalist industrial aesthetic with black and silver/grey color scheme. Very dark primary (black #000000), light grey/silver accent (#c0c2c4), white secondary. Professional, clean, construction-appropriate visual language.. Original photos: 0 real, 0 stock referenced.",
     "style": "elegant",

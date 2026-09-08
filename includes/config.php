@@ -176,7 +176,7 @@ $colors = [
     'secondary' => '#ffffff',   // white
     'accent'    => '#c0c2c4',   // light grey / silver
 ];
-$designArchetype = '';   // set in Phase 2
+$designArchetype = 'bold-industrial';   // Phase 2, 2026-09-08
 
 // ─── Legal / Compliance ────────────────────────────────────────────────────
 $entityType       = '';    // [VERIFY] entity type not provided in intake (LLC / Sole Prop / Corp)
