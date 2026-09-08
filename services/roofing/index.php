@@ -12,6 +12,19 @@ $pageTitle       = 'Roofing in Warrenton, MO';
 $pageDescription = 'Roofing contractor in Warrenton, MO. A&S Contracting Services self-performs roof repair, tear-off, and full replacement across Warren County—storm and hail claims handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/roofing/';
 
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985211708-fd9gws-39-Dec_24__2025_22-36-50-nmCB';
+$heroImageAlt = 'Completed asphalt shingle roof with vent pipes on a Warrenton, MO home by A&S Contracting Services';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779985083337-zk34j0-26-Feb_09__2026_17-30-49-9vp8', 'Worker installing a chimney on new roofing underlayment during a Warren County roof build'],
+    ['1779985081293-864e8m-2-Feb_09__2026_13-42-04-ptJL', 'Overhead view of asphalt shingles going on over a wooded residential lot near Warrenton'],
+    ['1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4', 'A&S crew tearing off old shingles and underlayment on a Warren County roofing project'],
+];
+
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
@@ -114,12 +127,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <!-- ═══════════════════ HERO (interior) ═══════════════════ -->
-<section class="hero hero--interior">
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -347,6 +368,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
         <p><?php echo htmlspecialchars($faq['answer']); ?></p>
       </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent roofing projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent roofing projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real roofing projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, from tear-off and dry-in to the final nail sweep, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
       <?php endforeach; ?>
     </div>
   </div>

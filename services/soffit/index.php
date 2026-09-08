@@ -12,6 +12,19 @@ $pageTitle       = 'Soffit in Warrenton, MO';
 $pageDescription = 'Soffit installation in Warrenton, MO. A&S Contracting Services installs and repairs vented soffit across Warren County—attic airflow restored, pests sealed out. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/soffit/';
 
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985210676-rimzkx-29-Dec_24__2025_18-22-23-xd3W';
+$heroImageAlt = 'Worker installing soffit trim on a two-story Warrenton home by A&S Contracting Services';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779984974072-agw64u-4-Aug_06__2025_13-45-27-DRwn', 'Single-story home with tan siding and finished soffit and eaves near Warrenton'],
+    ['1779985049352-yx87w1-20-Mar_12__2025_18-21-31-DDFM', 'Home addition with new dark siding and dormers mid-construction in Warren County'],
+    ['1779985485739-cy4u83-81-Dec_05__2024_18-25-35-1ywp', 'Completed metal barn with a white metal roof and finished trim in rural Missouri'],
+];
+
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
@@ -114,12 +127,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <!-- ═══════════════════ HERO (interior) ═══════════════════ -->
-<section class="hero hero--interior">
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -347,6 +368,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
         <p><?php echo htmlspecialchars($faq['answer']); ?></p>
       </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent soffit projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent soffit projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real soffit projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
       <?php endforeach; ?>
     </div>
   </div>

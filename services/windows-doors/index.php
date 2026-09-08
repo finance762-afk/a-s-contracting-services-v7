@@ -12,6 +12,19 @@ $pageTitle       = 'Windows & Doors in Warrenton, MO';
 $pageDescription = 'Window and door replacement in Warrenton, MO. A&S Contracting Services installs energy-efficient windows and doors—flashed, sealed, and self-performed across Warren County. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/windows-doors/';
 
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985247084-5a8nou-2-Aug_26__2025_18-27-26-neFH';
+$heroImageAlt = 'Home with white fiber-cement siding and large casement windows finished by A&S Contracting Services near Warrenton';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779984869042-6cwzvd-59-Aug_09__2025_12-39-54-JQC9', 'Two-story home wrapped for renovation with scaffolding during a Warren County window project'],
+    ['1779984864659-a47kou-52-Aug_08__2025_00-31-27-YHMr', 'A&S crew installing windows on a blue-sided home mid-renovation near Warrenton'],
+    ['1779985123343-qeqtag-24-Mar_19__2026_16-22-42-uQvT', 'Framed wall openings ready for new windows during a Warren County build'],
+];
+
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
@@ -114,12 +127,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <!-- ═══════════════════ HERO (interior) ═══════════════════ -->
-<section class="hero hero--interior">
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -347,6 +368,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
         <p><?php echo htmlspecialchars($faq['answer']); ?></p>
       </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent window and door projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent window and door projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real window and door projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
       <?php endforeach; ?>
     </div>
   </div>

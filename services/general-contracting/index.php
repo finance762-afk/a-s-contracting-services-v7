@@ -12,6 +12,19 @@ $pageTitle       = 'General Contracting in Warrenton, MO';
 $pageDescription = 'General contractor in Warrenton, MO. A&S Contracting Services manages residential and commercial projects end to end across Warren County. Free estimate.';
 $canonicalUrl    = $siteUrl . '/services/general-contracting/';
 
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985082241-xuoxbh-11-Feb_09__2026_15-26-29-L2wD';
+$heroImageAlt = 'A&S Contracting Services crew installing a new roof on a residential project near Warrenton, MO';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts', 'Gray-sided home with a covered porch and protective wrap during a Warren County build'],
+    ['1779985209297-ld8mti-1-Dec_23__2025_13-34-30-gKpa', 'Elevated home with metal siding under construction in a wooded Warren County lot'],
+    ['1779985127211-6wrwx6-41-Mar_19__2026_17-08-38-89QF', 'A&S worker on a ladder finishing a wooden overhang on a Warrenton home'],
+];
+
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
@@ -114,12 +127,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <!-- ═══════════════════ HERO (interior) ═══════════════════ -->
-<section class="hero hero--interior">
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -347,6 +368,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
         <p><?php echo htmlspecialchars($faq['answer']); ?></p>
       </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent general contracting projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent projects has A&amp;S completed as a Warrenton general contractor?</h2>
+      <p class="answer-block">These are real projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
       <?php endforeach; ?>
     </div>
   </div>

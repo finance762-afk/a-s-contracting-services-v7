@@ -12,6 +12,19 @@ $pageTitle       = 'Gutters in Warrenton, MO';
 $pageDescription = 'Gutter installation in Warrenton, MO. A&S Contracting Services forms seamless aluminum gutters on site across Warren County—downspouts, guards, and repairs handled. Free written estimates.';
 $canonicalUrl    = $siteUrl . '/services/gutters/';
 
+// ─── Hero + recent-work photos (image manifest) ─────────────────────────────
+$heroImage    = '1779985084434-7wvwuf-46-Feb_10__2026_22-02-29-uWM1';
+$heroImageAlt = 'Roof and gutter work in progress on a wooded Warren County property by A&S Contracting Services';
+$heroPreload  = [
+    'srcset' => "/assets/images/{$heroImage}-480.avif 480w, /assets/images/{$heroImage}-960.avif 960w",
+    'sizes'  => '100vw',
+];
+$workPhotos = [
+    ['1779985356802-y1uuhd-29-Aug_06__2025_14-39-50-VPdz', 'A&S worker on a ladder finishing exterior trim and gutter line on a gray-sided Warrenton home'],
+    ['1779985460368-i1nur1-60-Oct_14__2024_23-05-06-h2RS', 'Completed home with white siding, a charcoal roof, and new gutters near Warren County'],
+    ['1779985468766-asxmqk-65-Oct_14__2024_23-06-52-nSsb', 'Home with white siding, a covered porch, and clean gutter lines in central Missouri'],
+];
+
 // ─── FAQ (service-specific) ─────────────────────────────────────────────────
 $faqs = [
     [
@@ -114,12 +127,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
 /* Other services */
 .sp-other { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 @media (max-width: 800px) { .sp-other { grid-template-columns: 1fr; } }
+/* Photo hero: let the <picture> fill the .hero-bg layer */
+.hero--photo .hero-bg picture { display: block; width: 100%; height: 100%; }
+.hero--photo .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.hero--photo .breadcrumb, .hero--photo .breadcrumb a { color: rgba(255,255,255,.82); }
 </style>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php'; ?>
 
 <!-- ═══════════════════ HERO (interior) ═══════════════════ -->
-<section class="hero hero--interior">
+<section class="hero hero--photo">
+  <div class="hero-bg">
+    <?php echo p1_picture($heroImage, $heroImageAlt, ['sizes' => '100vw', 'width' => 1600, 'height' => 1000, 'loading' => 'eager', 'fetchpriority' => 'high']); ?>
+  </div>
+  <div class="hero-overlay"></div>
   <span class="grain" aria-hidden="true"></span>
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -348,6 +369,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <summary><?php echo htmlspecialchars($faq['question']); ?></summary>
         <p><?php echo htmlspecialchars($faq['answer']); ?></p>
       </details>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RECENT WORK ═══════════════════ -->
+<section class="section sp-gallery" aria-label="Recent gutter projects">
+  <div class="container-wide">
+    <div class="section-title reveal-up">
+      <span class="eyebrow-label">Recent Work</span>
+      <h2>What recent gutter projects has A&amp;S completed near Warrenton?</h2>
+      <p class="answer-block">These are real gutter projects A&amp;S Contracting Services self-performed across Warrenton and Warren County&mdash;each one handled start to finish by the same in-house crew, never a subcontractor.</p>
+    </div>
+    <div class="sp-gallery-grid" data-p1-dynamic>
+      <?php foreach ($workPhotos as $wp): ?>
+      <figure class="sp-gallery-item">
+        <?php echo p1_picture($wp[0], $wp[1], ['sizes' => '(max-width: 700px) 100vw, 40vw', 'width' => 640, 'height' => 480, 'decoding' => 'async']); ?>
+        <figcaption><?php echo htmlspecialchars($wp[1]); ?></figcaption>
+      </figure>
       <?php endforeach; ?>
     </div>
   </div>
