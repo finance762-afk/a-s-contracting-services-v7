@@ -199,6 +199,14 @@ if (!isset($siteName)) {
   </a>
 </div>
 
+<!-- Cookie Banner (v6.3 compliance) -->
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">
+  <p class="cookie-banner__text">
+    We use cookies to improve your experience and analyze site usage. By continuing, you agree to our use of cookies. <a href="/cookie-policy/">Learn more</a>.
+  </p>
+  <button type="button" class="cookie-banner__dismiss" id="cookie-banner-dismiss" aria-label="Dismiss cookie notice">Got it</button>
+</div>
+
 <!-- Scripts (v6.3 — ALL scripts carry defer, no CDN libraries) -->
 <script src="/assets/js/main.js" defer></script>
 
@@ -221,6 +229,30 @@ if (!isset($siteName)) {
       });
     }
   });
+</script>
+
+<!-- Cookie Banner Dismissal Script (v6.3) -->
+<script>
+(function () {
+  var banner = document.getElementById('cookie-banner');
+  var dismissBtn = document.getElementById('cookie-banner-dismiss');
+  if (!banner || !dismissBtn) return;
+
+  var storageKey = 'cookieBannerDismissed_v1';
+  var dismissed = false;
+  try { dismissed = localStorage.getItem(storageKey) === 'true'; } catch (e) {}
+
+  if (dismissed) return;
+
+  // Show banner after slight delay so it doesn't compete with first paint
+  setTimeout(function () { banner.classList.add('is-visible'); }, 800);
+
+  dismissBtn.addEventListener('click', function () {
+    banner.classList.remove('is-visible');
+    setTimeout(function () { banner.remove(); }, 500);
+    try { localStorage.setItem(storageKey, 'true'); } catch (e) {}
+  });
+})();
 </script>
 
 </body>
