@@ -21,103 +21,103 @@
   "pages": [
     {
       "slug": "roofing",
-      "type": "service",
       "title": "Roofing in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Roofing"
       ],
-      "primary_keyword": "roofing Warrenton MO"
+      "primary_keyword": "roofing Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "siding",
-      "type": "service",
       "title": "Siding in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Siding"
       ],
-      "primary_keyword": "siding Warrenton MO"
+      "primary_keyword": "siding Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "gutters",
-      "type": "service",
       "title": "Gutters in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Gutters"
       ],
-      "primary_keyword": "gutters Warrenton MO"
+      "primary_keyword": "gutters Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "soffit",
-      "type": "service",
       "title": "Soffit in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Soffit"
       ],
-      "primary_keyword": "soffit Warrenton MO"
+      "primary_keyword": "soffit Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "fascia",
-      "type": "service",
       "title": "Fascia in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Fascia"
       ],
-      "primary_keyword": "fascia Warrenton MO"
+      "primary_keyword": "fascia Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "windows-doors",
-      "type": "service",
       "title": "Windows & Doors in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Windows & Doors"
       ],
-      "primary_keyword": "windows & doors Warrenton MO"
+      "primary_keyword": "windows & doors Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "full-scale-interior-work",
-      "type": "service",
       "title": "Full Scale Interior Work in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Full Scale Interior Work"
       ],
-      "primary_keyword": "full scale interior work Warrenton MO"
+      "primary_keyword": "full scale interior work Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "exterior-work",
-      "type": "service",
       "title": "Exterior Work in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Exterior Work"
       ],
-      "primary_keyword": "exterior work Warrenton MO"
+      "primary_keyword": "exterior work Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "dry-wall",
-      "type": "service",
       "title": "Dry Wall in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "Dry Wall"
       ],
-      "primary_keyword": "dry wall Warrenton MO"
+      "primary_keyword": "dry wall Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     },
     {
       "slug": "general-contracting",
-      "type": "service",
       "title": "General Contracting in Warrenton, MO",
-      "sections": "hero, service_details, process, testimonials, cta",
+      "type": "service",
       "services": [
         "General Contracting"
       ],
-      "primary_keyword": "general contracting Warrenton MO"
+      "primary_keyword": "general contracting Warrenton MO",
+      "sections": "hero, service_details, process, testimonials, cta"
     }
   ],
   "phone": "+1(636) 359-7204",
@@ -175,15 +175,15 @@
   "content": {
     "usps": [
       "Licensed & insured in Missouri",
-      "Free estimates — no obligation",
+      "Free estimates \u2014 no obligation",
       "50-mile service radius from Warrenton",
-      "Self-performed work — no subcontractors",
+      "Self-performed work \u2014 no subcontractors",
       "5-star Google rated",
       "Same crew start to finish"
     ],
     "years": 3,
     "insurance": "",
-    "description": "A&S Contracting Services is a licensed and insured general contractor serving residential and commercial clients within 50 miles of Warrenton, MO. The company self-performs roofing, siding, gutters, drywall, windows, and full-scale renovations — no trade gaps, no subcontracted surprises. Founded with a focus on roofing and exterior work, A&S expanded to offer a full range of residential construction services under one licensed roof, providing consistent quality from a single accountable team across Warren County and central Missouri.",
+    "description": "A&S Contracting Services is a licensed and insured general contractor serving residential and commercial clients within 50 miles of Warrenton, MO. The company self-performs roofing, siding, gutters, drywall, windows, and full-scale renovations \u2014 no trade gaps, no subcontracted surprises. Founded with a focus on roofing and exterior work, A&S expanded to offer a full range of residential construction services under one licensed roof, providing consistent quality from a single accountable team across Warren County and central Missouri.",
     "certifications": [
       "Licensed Missouri general contractor",
       "Fully insured"
@@ -196,12 +196,12 @@
       "rating": 5
     },
     {
-      "text": "We needed new siding and gutters on our place outside Warrenton. A&S was the most professional of the three contractors we got quotes from — they showed up when they said they would, communicated clearly, and finished ahead of schedule. Very happy we went with them.",
+      "text": "We needed new siding and gutters on our place outside Warrenton. A&S was the most professional of the three contractors we got quotes from \u2014 they showed up when they said they would, communicated clearly, and finished ahead of schedule. Very happy we went with them.",
       "author": "Jennifer K.",
       "rating": 5
     },
     {
-      "text": "These guys did a full interior renovation — drywall, trim, paint — on a room addition at our house near Wright City. Great craftsmanship, clean job site every day, and they handled everything themselves without subbing it out. Will absolutely hire again.",
+      "text": "These guys did a full interior renovation \u2014 drywall, trim, paint \u2014 on a room addition at our house near Wright City. Great craftsmanship, clean job site every day, and they handled everything themselves without subbing it out. Will absolutely hire again.",
       "author": "Robert T.",
       "rating": 5
     },
@@ -389,88 +389,88 @@
     }
   ],
   "address_public": true,
-  "business_hours": "Mon–Fri 7am–6pm · Sat 8am–3pm",
+  "business_hours": "Mon\u2013Fri 7am\u20136pm \u00b7 Sat 8am\u20133pm",
   "image_curation": null,
   "research_brief": null,
   "competitor_urls": [],
   "phone_secondary": "",
   "service_grouping": {
-    "cap": 10,
     "tier": "premium",
+    "cap": 10,
+    "original_count": 10,
+    "grouped_count": 10,
     "groups": [
       {
         "page": "Roofing",
-        "solo": true,
         "services": [
           "Roofing"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Siding",
-        "solo": true,
         "services": [
           "Siding"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Gutters",
-        "solo": true,
         "services": [
           "Gutters"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Soffit",
-        "solo": true,
         "services": [
           "Soffit"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Fascia",
-        "solo": true,
         "services": [
           "Fascia"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Windows & Doors",
-        "solo": true,
         "services": [
           "Windows & Doors"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Full Scale Interior Work",
-        "solo": true,
         "services": [
           "Full Scale Interior Work"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Exterior Work",
-        "solo": true,
         "services": [
           "Exterior Work"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "Dry Wall",
-        "solo": true,
         "services": [
           "Dry Wall"
-        ]
+        ],
+        "solo": true
       },
       {
         "page": "General Contracting",
-        "solo": true,
         "services": [
           "General Contracting"
-        ]
+        ],
+        "solo": true
       }
     ],
-    "grouped_count": 10,
-    "original_count": 10,
     "ungrouped_for_upgrade": true
   },
   "lead_notification_email": "blake@ascontractingservices.com",
