@@ -6,16 +6,16 @@
     "requires_blog": true
   },
   "site": "a-s-contracting-services-v7",
-  "expected_slug": "a-s-contracting-services-v7",
-  "passed": false,
-  "grade": "F",
-  "score_pct": 86,
+  "expected_slug": null,
+  "passed": true,
+  "grade": "B",
+  "score_pct": 87,
   "summary": {
-    "total": 315,
-    "passed": 226,
-    "failed": 81,
+    "total": 312,
+    "passed": 224,
+    "failed": 80,
     "warn": 8,
-    "blockers_failed": 1,
+    "blockers_failed": 0,
     "warnings_failed": 82
   },
   "techniques_detected": [
@@ -2624,6 +2624,17 @@
       "section": "IMAGES"
     },
     {
+      "status": "fail",
+      "check": "Image resolution",
+      "detail": "1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1-960.webp is 720x960, recommend at least 800x500 for section",
+      "file": "assets/images/1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1-960.webp",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
+      "section": "IMAGES"
+    },
+    {
       "status": "pass",
       "check": "Page One Insights dofollow link",
       "detail": "",
@@ -2647,8 +2658,8 @@
     },
     {
       "status": "pass",
-      "check": "Form action (lead endpoint, correct slug)",
-      "detail": "Slug: a-s-contracting-services-v7",
+      "check": "Form action (lead endpoint)",
+      "detail": "Slug(s): a-s-contracting-services-v7",
       "file": "",
       "severity": "blocker",
       "expected": null,
@@ -3317,14 +3328,14 @@
       "section": "PERFORMANCE v6.2"
     },
     {
-      "status": "fail",
+      "status": "pass",
       "check": "Hero image \u2264150KB",
-      "detail": "1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y.jpg: 2846KB (largest image (no hero-named file); budget 150KB)",
+      "detail": "1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-1600.webp: 146KB (largest image (no hero-named file))",
       "file": "",
       "severity": "blocker",
       "expected": null,
       "actual": null,
-      "fix_hint": "Re-encode as webp ~80 quality at 1600w max per performance-2026.md Parts A/B",
+      "fix_hint": "",
       "section": "PERFORMANCE v6.2"
     },
     {
@@ -3374,7 +3385,7 @@
     {
       "status": "pass",
       "check": "No image file > 250KB",
-      "detail": "6 referenced image path(s) checked",
+      "detail": "8 referenced image path(s) checked",
       "file": "",
       "severity": "blocker",
       "expected": null,
@@ -3385,7 +3396,7 @@
     {
       "status": "warn",
       "check": "Unreferenced images > 250KB on disk",
-      "detail": "72 file(s) not referenced by any page, e.g. 1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y.jpg 2846KB, 1779985125335-8uyfgw-27-Mar_19__2026_16-26-33-BBWG.jpg 2694KB, 1779985120292-f16f8x-3-Mar_19__2026_12-17-52-Ujpj.jpg 2639KB",
+      "detail": "3 file(s) not referenced by any page, e.g. 1779985211133-e74mup-36-Dec_24__2025_21-56-30-RA7d-1600.webp 348KB, 1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-1600.webp 332KB, 1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts-1600.webp 324KB",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -3427,20 +3438,9 @@
       "section": "PERFORMANCE v6.3"
     },
     {
-      "status": "pass",
-      "check": "sitemap.xml reachable",
-      "detail": "/sitemap.xml \u2192 404 on the preview host (no rewrite there), but /sitemap.php serves 30 <loc> entries \u2014 fine on Hostinger",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
       "status": "warn",
-      "check": "Preview host lacks the /sitemap.xml rewrite",
-      "detail": "Add to /etc/nginx/sites-available/preview: location = /sitemap.xml { try_files /sitemap.xml /sitemap.php; }",
+      "check": "sitemap.xml reachable (needs --url)",
+      "detail": "Pass --url https://preview-<slug>.pageone.cloud (or the live domain) to fetch /sitemap.xml",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -3493,42 +3493,9 @@
       "section": "PERFORMANCE v6.3"
     },
     {
-      "status": "pass",
-      "check": "Lighthouse mobile Performance \u226590",
-      "detail": "94 (runs [93, 94, 94]) \u2014 LCP 2.9s \u00b7 CLS 0 \u00b7 TBT 0ms \u00b7 408KB",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
-      "status": "fail",
-      "check": "Lighthouse mobile Accessibility \u226595",
-      "detail": "90 \u2014 failing audits: aria-prohibited-attr, color-contrast, link-in-text-block",
-      "file": "",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Open the Lighthouse Accessibility audit list for https://preview-a-s-contracting-services-v7.pageone.cloud",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
-      "status": "pass",
-      "check": "Lighthouse mobile Best Practices \u226595",
-      "detail": "100",
-      "file": "",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
       "status": "warn",
-      "check": "Lighthouse mobile SEO \u226595",
-      "detail": "61 on a preview host (X-Robots noindex + robots block depress the SEO category by design) \u2014 re-check on the live domain",
+      "check": "Lighthouse mobile (needs --url)",
+      "detail": "Pass --url to run qa/lighthouse-mobile.mjs (Performance \u226590 FAIL, other categories \u226595 WARN)",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -4387,6 +4354,17 @@
     },
     {
       "status": "fail",
+      "check": "Image resolution",
+      "detail": "1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1-960.webp is 720x960, recommend at least 800x500 for section",
+      "file": "assets/images/1779985188297-sg808o-38-Jul_17__2024_23-21-26-ioE1-960.webp",
+      "severity": "warning",
+      "expected": null,
+      "actual": null,
+      "fix_hint": "Replace with higher-resolution version or remove from primary placement",
+      "section": "IMAGES"
+    },
+    {
+      "status": "fail",
       "check": "llms.txt complete",
       "detail": "Missing sections: Business Information, Pages, About",
       "file": "",
@@ -4398,17 +4376,6 @@
     },
     {
       "status": "fail",
-      "check": "Hero image \u2264150KB",
-      "detail": "1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y.jpg: 2846KB (largest image (no hero-named file); budget 150KB)",
-      "file": "",
-      "severity": "blocker",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Re-encode as webp ~80 quality at 1600w max per performance-2026.md Parts A/B",
-      "section": "PERFORMANCE v6.2"
-    },
-    {
-      "status": "fail",
       "check": "CTA band form on blog/about/FAQ pages",
       "detail": "4 page(s) without a mid-page form: about/index.php, faq/index.php, blog/when-to-replace-siding-missouri/index.php, blog/roof-replacement-cost-guide-missouri/index.php",
       "file": "",
@@ -4416,17 +4383,6 @@
       "expected": null,
       "actual": null,
       "fix_hint": "<section class=\"cta-band\"> with the compact form after the first content section",
-      "section": "PERFORMANCE v6.3"
-    },
-    {
-      "status": "fail",
-      "check": "Lighthouse mobile Accessibility \u226595",
-      "detail": "90 \u2014 failing audits: aria-prohibited-attr, color-contrast, link-in-text-block",
-      "file": "",
-      "severity": "warning",
-      "expected": null,
-      "actual": null,
-      "fix_hint": "Open the Lighthouse Accessibility audit list for https://preview-a-s-contracting-services-v7.pageone.cloud",
       "section": "PERFORMANCE v6.3"
     }
   ],
@@ -4489,7 +4445,7 @@
     {
       "status": "warn",
       "check": "Unreferenced images > 250KB on disk",
-      "detail": "72 file(s) not referenced by any page, e.g. 1779985124323-t7sz4h-25-Mar_19__2026_16-22-48-7m7y.jpg 2846KB, 1779985125335-8uyfgw-27-Mar_19__2026_16-26-33-BBWG.jpg 2694KB, 1779985120292-f16f8x-3-Mar_19__2026_12-17-52-Ujpj.jpg 2639KB",
+      "detail": "3 file(s) not referenced by any page, e.g. 1779985211133-e74mup-36-Dec_24__2025_21-56-30-RA7d-1600.webp 348KB, 1779985122105-liao15-14-Mar_19__2026_13-58-09-spf4-1600.webp 332KB, 1779985138888-d41ths-3-Nov_20__2024_22-50-31-ZRts-1600.webp 324KB",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -4499,8 +4455,8 @@
     },
     {
       "status": "warn",
-      "check": "Preview host lacks the /sitemap.xml rewrite",
-      "detail": "Add to /etc/nginx/sites-available/preview: location = /sitemap.xml { try_files /sitemap.xml /sitemap.php; }",
+      "check": "sitemap.xml reachable (needs --url)",
+      "detail": "Pass --url https://preview-<slug>.pageone.cloud (or the live domain) to fetch /sitemap.xml",
       "file": "",
       "severity": "info",
       "expected": null,
@@ -4510,8 +4466,8 @@
     },
     {
       "status": "warn",
-      "check": "Lighthouse mobile SEO \u226595",
-      "detail": "61 on a preview host (X-Robots noindex + robots block depress the SEO category by design) \u2014 re-check on the live domain",
+      "check": "Lighthouse mobile (needs --url)",
+      "detail": "Pass --url to run qa/lighthouse-mobile.mjs (Performance \u226590 FAIL, other categories \u226595 WARN)",
       "file": "",
       "severity": "info",
       "expected": null,
