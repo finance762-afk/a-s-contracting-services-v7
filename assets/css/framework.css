@@ -310,6 +310,7 @@ body.menu-open .site-header { z-index: 960; } /* keep the bar (and the hamburger
 .hero__content, .hero__copy { max-width: 60ch; }
 .breadcrumb { display: flex; flex-wrap: wrap; gap: .4rem; font-size: .85rem; color: var(--color-muted); margin: 0 0 1rem; padding: 0; list-style: none; }
 .breadcrumb ol { display: contents; list-style: none; margin: 0; padding: 0; }
+.breadcrumb > .container { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; } /* about/legal pages wrap the <ol> in a container — keep it inline */
 .breadcrumb a { color: inherit; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .breadcrumb-sep { opacity: .5; }
 
