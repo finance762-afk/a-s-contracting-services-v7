@@ -193,7 +193,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
       <div class="hero-text">
         <span class="eyebrow">Warrenton, MO &middot; Serving Warren County since <?php echo $yearEstablished; ?></span>
         <h1 class="hero-title">Warrenton&rsquo;s <span class="text-accent">general contractor</span> for roofs, siding &amp; remodels</h1>
-        <p class="hero-answer">A&amp;S Contracting Services self-performs roofing, siding, gutters, windows, and full renovations for homes within 50 miles of Warrenton&mdash;one licensed, insured crew from estimate to walkthrough.</p>
+        <p class="hero-answer">A&amp;S Contracting Services is a licensed Missouri general contractor serving homes within 50 miles of Warrenton. The company self-performs all roofing, siding, gutter, window, and drywall work&mdash;no subcontractors, no trade gaps&mdash;with one accountable crew from your first estimate through final walkthrough.</p>
         <div class="hero-actions">
           <a href="#estimate" class="btn btn-primary btn-lg hero-form-open">Get a free estimate</a>
           <a class="link-call" href="tel:<?php echo $phoneTel; ?>"><?php echo icon('phone', 18); ?> or call <?php echo $phone; ?></a>

@@ -202,7 +202,7 @@ $leadNotificationEmail = 'blake@ascontractingservices.com';
 $leadNotificationPhone = '+16363597204';
 
 // ─── Form Action (Formsubmit.co — 2026-07-11 standard) ───────────────────────
-$formAction = 'https://db.pageone.cloud/functions/v1/leads/a-s-contracting-services'; // Page One leads endpoint (no Formsubmit, Sep 2026)
+$formAction = 'https://db.pageone.cloud/functions/v1/leads/a-s-contracting-services-v7'; // Page One leads endpoint (no Formsubmit, Sep 2026)
 
 // ─── Tier ──────────────────────────────────────────────────────────────────
 $tier = 'premium';   // basic | standard | premium
