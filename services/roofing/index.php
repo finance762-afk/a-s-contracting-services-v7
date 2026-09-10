@@ -33,7 +33,7 @@ $faqs = [
     ],
     [
         'question' => 'Do you handle hail and storm damage insurance claims?',
-        'answer'   => 'Yes. A&S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation.',
+        'answer'   => 'Yes. A&S Contracting Services documents hail bruising, wind-lifted shingles, and creased ridges with photos, meets your adjuster on site, and provides an itemized estimate your insurer can process. Warren County sees real Missouri hail, and clean documentation is what keeps a roof claim moving from inspection to installation. Read our guide on <a href="/blog/hail-damage-roof-claims-in-warren-county-first-72-hours/">filing a hail damage roof insurance claim in Missouri</a> for what to document in the first 72 hours.',
     ],
     [
         'question' => 'How long does a roof replacement take?',

@@ -251,7 +251,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <p class="answer-block">A&amp;S Contracting Services roll-forms seamless aluminum gutters right at your house from a continuous coil, so each run is cut to the exact length with no mid-span seams to leak. The same crew that measures the roofline sets the pitch, hangs the gutters, and routes the downspouts well away from the foundation.</p>
         <ul class="sp-evidence">
           <li><?php echo icon('ruler', 22); ?><span><b>Formed on site.</b> Continuous runs cut to length mean fewer joints and fewer leaks over the years.</span></li>
-          <li><?php echo icon('droplets', 22); ?><span><b>Sized to your roof.</b> We calculate the runoff so 5-inch or 6-inch K-style keeps up in a real Missouri downpour.</span></li>
+          <li><?php echo icon('droplets', 22); ?><span><b>Sized to your roof.</b> We calculate the runoff so <a href="/blog/seamless-gutters-cost-in-warrenton-mo-5-inch-vs-6-inch/">5-inch or 6-inch K-style</a> keeps up in a real Missouri downpour.</span></li>
           <li><?php echo icon('shield-check', 22); ?><span><b>Foundation-first.</b> Correct pitch and extended downspouts move water away from the house, not into the basement.</span></li>
         </ul>
       </div>

@@ -211,6 +211,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <h2>How do you know your Warrenton fascia is failing?</h2>
         <p class="answer-block">A&amp;S Contracting Services looks for soft or rotted fascia boards, paint peeling off the trim behind your gutters, gutters sagging or pulling away from the house, dark water stains running down the fascia, and woodpecker or pest holes. Any one of these means water is getting behind the board and rotting the wood that holds your gutters.</p>
         <p class="pull-quote">By the time paint peels, the board behind it is usually already gone—the finish fails last, not first.</p>
+        <p><a href="/blog/soffit-and-fascia-rot-signs-missouri-homeowners-miss/">Learn the early warning signs of soffit and fascia rot</a> that Missouri homeowners overlook—and when repair stops being cost-effective.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">

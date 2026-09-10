@@ -211,6 +211,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
         <h2>How do you know your Warrenton soffit needs work?</h2>
         <p class="answer-block">If soffit panels are peeling or sagging, birds and wasps are nesting in the eaves, or the attic runs hot and shows mildew, the underside of your roof overhang has stopped doing its job. A&amp;S Contracting Services inspects the eaves and rafter tails, finds where air and pests are getting through, and tells you whether a repair or full soffit replacement is the right move.</p>
         <p class="pull-quote">The soffit is the intake vent for your whole attic—block it, and the roof above starts to cook.</p>
+        <p><a href="/blog/soffit-and-fascia-rot-signs-missouri-homeowners-miss/">Discover the warning signs of soffit and fascia rot</a> that lead to expensive structural repairs if caught too late.</p>
       </div>
       <div class="sp-signs reveal-right">
         <div class="sp-sign">

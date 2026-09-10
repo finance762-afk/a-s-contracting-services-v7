@@ -391,6 +391,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     for <a href="/services/general-contracting/">low-slope residential applications</a>. Requires professional installation—DIY
     fails are common.</li>
   </ul>
+  <p>
+    Wondering whether metal or asphalt shingles make more sense for your home and budget? Read our detailed
+    <a href="/blog/metal-roof-vs-asphalt-shingles-in-missouri-cost-and-lifespan/">metal roof vs shingles comparison</a>,
+    which breaks down total lifetime cost, performance in Missouri weather, and when each material is the better investment.
+  </p>
 
   <h3>Roof Size & Complexity</h3>
   <p>
@@ -455,6 +460,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     If your roof suffered hail or wind damage, your homeowner's insurance may cover replacement. <strong>Contractors can't
     negotiate with your adjuster on your behalf</strong> (that requires a public adjuster license in Missouri), but we can
     document damage, provide repair estimates, and point out issues the adjuster might miss during their initial inspection.
+  </p>
+  <p>
+    The first 72 hours after a hailstorm are critical for claim success—read our guide on
+    <a href="/blog/hail-damage-roof-claims-in-warren-county-first-72-hours/">filing a hail damage roof insurance claim in Missouri</a>
+    for step-by-step documentation requirements and common denial reasons to avoid.
   </p>
   <p>
     Insurance typically covers "like kind and quality" replacement—if you had architectural shingles, they'll pay for
