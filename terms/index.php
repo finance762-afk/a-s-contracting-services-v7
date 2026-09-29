@@ -156,9 +156,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/head.php';
     Address: <?php echo $companyAddress; ?>
   </p>
 
-  <div class="legal-disclaimer">
-    This document is provided as a general template. We recommend reviewing with a licensed <?php echo $companyState; ?> attorney before publication.
-  </div>
 
 </article>
 
